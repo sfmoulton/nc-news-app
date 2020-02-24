@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 15vh;
+  background-color: teal;
+
+}
+
+.h1 {
+ color: white;
+ grid-area: 2;
+ font-size: 6vh;
+}
