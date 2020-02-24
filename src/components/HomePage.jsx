@@ -4,6 +4,7 @@ import axios from "axios";
 import LoadingIndicator from "./LoadingIndicator";
 import ArticlesList from "./ArticlesList";
 
+
 class HomePage extends Component {
   state = {
     articles: [],
@@ -11,26 +12,27 @@ class HomePage extends Component {
   };
 
   getArticles = () => {
-    axios.get("https://steph-nc-news-app.herokuapp.com/api/articles").then(response => {
-      this.setState({articles: response.data.articles, isLoading: false})
-    })
-  }
+    axios
+      .get("https://steph-nc-news-app.herokuapp.com/api/articles")
+      .then(response => {
+        this.setState({ articles: response.data.articles, isLoading: false });
+      });
+  };
 
   componentDidMount = () => {
     this.getArticles();
-  }
+  };
 
   render() {
     const { articles, isLoading } = this.state;
-    console.log(articles);
-    
+
     if (isLoading)
       return <LoadingIndicator LoadingIndicator={LoadingIndicator} />;
-  
+
     return (
-    <div className={styles.articlesList}>
-      <ArticlesList articles={articles} />
-    </div>
+      <div className={styles.articlesList}>
+        <ArticlesList articles={articles} />
+      </div>
     );
   }
 }

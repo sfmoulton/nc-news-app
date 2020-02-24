@@ -1,0 +1,8 @@
+.articlesList {
+  display: flex;
+  margin: 10%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+

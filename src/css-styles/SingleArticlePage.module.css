@@ -1,0 +1,16 @@
+.articleContainer {
+  display: flex;
+  margin: 10%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.articleTitle {
+  text-align: center;
+  font-size: 4.3vh;
+}
+
+.articleAuthor {
+  text-align: center;
+  font-size: 3.3vh;
+}
