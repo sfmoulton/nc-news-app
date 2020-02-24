@@ -1,3 +1,5 @@
+
+
 .header {
   display: flex;
   flex-direction: row;
@@ -11,4 +13,7 @@
  color: white;
  grid-area: 2;
  font-size: 6vh;
+ font-family: ;
+ letter-spacing: 1vw;
 }
+
