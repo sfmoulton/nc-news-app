@@ -3,12 +3,10 @@ import LoadingIndicator from "./LoadingIndicator";
 import CommentCard from "./CommentCard";
 import axios from "axios";
 import AddArticleComment from "./AddArticleComment";
-// import RemoveUserComments from "./RemoveUserComments";
-// import LoggedInUserComments from "./LoggedInUserComments"
 
 class ArticleCommentsPage extends Component {
   state = {
-    articleComments: [],
+    comments: [],
     isLoading: true
   };
 
@@ -21,13 +19,13 @@ class ArticleCommentsPage extends Component {
       )
       .then(response => {
         this.setState({
-          articleComments: response.data.comments,
+          comments: response.data.comments,
           isLoading: false
         });
       });
   };
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.getArticleComments();
   };
 
@@ -45,13 +43,30 @@ class ArticleCommentsPage extends Component {
   };
 
   addCommentToList = newComment => {
-    this.setState(currentState => {
-      return { articleComments: [newComment, ...currentState.articleComments] };
+    this.setState((state) => {
+      return { comments: [newComment, ...state.comments] };
     });
   };
 
+  deleteComment = comment_id => {
+    return axios.delete(
+      `https://steph-nc-news-app.herokuapp.com/api/comments/${comment_id}`
+    );
+  };
+
+  removeCommentFromState = comment_id => {
+    const { comments } = this.state;
+    this.deleteComment(comment_id).then(() => {
+      const filteredComments = comments.filter(comment => {
+      return comment.comment_id !== comment_id;
+    });
+    this.setState({ comments: filteredComments });
+    })
+    
+  };
+
   render() {
-    const { articleComments, isLoading } = this.state;
+    const { comments, isLoading } = this.state;
     const { article_id, username } = this.props;
 
     if (isLoading)
@@ -59,14 +74,6 @@ class ArticleCommentsPage extends Component {
 
     return (
       <div>
-        {/* <RemoveUserComments
-          username={username}
-          articleComments={articleComments}
-        /> */}
-        {/* <LoggedInUserComments
-          username={username}
-          articleComments={articleComments}
-        /> */}
         <AddArticleComment
           article_id={article_id}
           postNewArticleComment={this.postNewArticleComment}
@@ -74,7 +81,12 @@ class ArticleCommentsPage extends Component {
           addCommentToList={this.addCommentToList}
         />
         <div>
-          <CommentCard articleComments={articleComments} username={username} />
+          <CommentCard
+            comments={comments}
+            username={username}
+            deleteComment={this.deleteComment}
+            removeCommentFromState={this.removeCommentFromState}
+          />
         </div>
       </div>
     );

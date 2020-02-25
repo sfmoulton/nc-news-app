@@ -20,7 +20,7 @@ class SingleTopicPage extends Component {
     });
   };
 
-  componentDidUpdate = (prevProps) => {
+  componentDidUpdate(prevProps) {
     if (prevProps.topic !== this.props.topic) {
       this.getArticlesByTopic();
     }

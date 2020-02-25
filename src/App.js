@@ -5,12 +5,9 @@ import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 import SingleTopicPage from "./components/SingleTopicPage";
 import TopicsNavBar from "./components/TopicsNavBar";
-import styles from "./css-styles/App.module.css";
 import SingleArticlePage from "./components/SingleArticlePage";
 import ArticleCommentsPage from "./components/ArticleCommentsPage";
 import HomeButton from "./components/HomeButton";
-import ManageCommentsButton from "./components/ManageCommentsButton";
-import LoggedInUserComments from "./components/LoggedInUserComments";
 
 class App extends Component {
   state = {
@@ -22,10 +19,8 @@ class App extends Component {
       <main>
         <HomeButton />
         <Header />
-        <ManageCommentsButton username={username} />
-        <div className={styles.navBarContainer}>
-          <TopicsNavBar />
-        </div>
+
+        <TopicsNavBar />
         <Router>
           <HomePage path="/" />
           <SingleTopicPage path="/topics/:topic" />
@@ -34,7 +29,6 @@ class App extends Component {
             path="/articles/:article_id/comments"
             username={username}
           />
-          <LoggedInUserComments path="/my_comments" username={username} />
         </Router>
       </main>
     );

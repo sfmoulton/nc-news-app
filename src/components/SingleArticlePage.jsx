@@ -25,11 +25,11 @@ class SingleArticlePage extends Component {
       });
   };
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.getArticleInfo();
   };
 
-  componentDidUpdate = prevProps => {
+  componentDidUpdate(prevProps) {
     if (prevProps.uri !== this.props.uri) {
       this.getArticleInfo();
     }

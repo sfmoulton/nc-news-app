@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "@reach/router";
-import styles from "../css-styles/TopicsNavBar.module.css"
+import styles from "../css-styles/TopicsNavBar.module.css";
+import TopicButton from "./TopicButton";
 
 class TopicsNavBar extends Component {
   state = {
@@ -16,23 +16,21 @@ class TopicsNavBar extends Component {
       });
   };
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.getAllTopics();
   };
 
   render() {
     const { topics } = this.state;
+    
 
-    return (
-  
-     topics.map(topic => {
+    return topics.map(topic => {
       return (
-        <Link to={`/topics/${topic.slug}`} key={topic.slug}>
-          <button className={styles.topicButton}>{topic.slug.toUpperCase()}</button>
-        </Link>
+        <div key={topic.slug} >
+          <TopicButton topic={topic} />
+        </div>
       );
-   
-    }));
+    });
   }
 }
 

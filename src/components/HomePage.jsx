@@ -23,7 +23,7 @@ class HomePage extends Component {
       });
   };
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.getArticles();
   };
 

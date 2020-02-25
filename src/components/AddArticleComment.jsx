@@ -21,6 +21,10 @@ class AddArticleComment extends Component {
     });
   };
 
+  componentDidUpdate(prevState) {
+    
+  }
+
   render() {
     return (
       <div>
@@ -31,6 +35,7 @@ class AddArticleComment extends Component {
               required
               type="text"
               onChange={event => this.handleChange(event.target.value, "body")}
+              value={this.state.body}
             />
           </label>
           <button>Post</button>
