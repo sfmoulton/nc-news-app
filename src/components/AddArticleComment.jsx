@@ -2,32 +2,40 @@ import React, { Component } from "react";
 
 class AddArticleComment extends Component {
   state = {
-    username: "",
-    commentBody: ""
+    body: ""
   };
 
   handleChange = (value, key) => {
-    this.setState({[key]: value});
-  }
+    this.setState({ [key]: value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const { body } = this.state;
+    const { postNewArticleComment, username, addCommentToList } = this.props;
+    const requestBody = { username, body };
+
+    postNewArticleComment(requestBody).then(newComment => {
+      addCommentToList(newComment);
+      this.setState({ body: "" });
+    });
+  };
 
   render() {
-    console.log(this.props.article_id);
-    
     return (
-      <>
-        <h2>Add new comment:</h2>
-        <form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
           <label>
-            Username:
-            <input type="text" id="username" value={this.state.username} />
+            Post new comment:
+            <input
+              required
+              type="text"
+              onChange={event => this.handleChange(event.target.value, "body")}
+            />
           </label>
-          <label>
-            Comment:
-            <input type="text" id="body" value={this.state.commentBody} />
-          </label>
-          <button>Post comment</button>
+          <button>Post</button>
         </form>
-      </>
+      </div>
     );
   }
 }

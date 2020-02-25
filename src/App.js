@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import { Router } from "@reach/router";
 import Header from "./components/Header";
@@ -8,24 +8,37 @@ import TopicsNavBar from "./components/TopicsNavBar";
 import styles from "./css-styles/App.module.css";
 import SingleArticlePage from "./components/SingleArticlePage";
 import ArticleCommentsPage from "./components/ArticleCommentsPage";
-import HomeButton from "./components/HomeButton"
+import HomeButton from "./components/HomeButton";
+import ManageCommentsButton from "./components/ManageCommentsButton";
+import LoggedInUserComments from "./components/LoggedInUserComments";
 
-function App() {
-  return (
-    <main>
-      <HomeButton />
-      <Header />
-      <div className={styles.navBarContainer}>
-        <TopicsNavBar />
-      </div>
-      <Router>
-        <HomePage path="/" />
-        <SingleTopicPage path="/topics/:topic" />
-        <SingleArticlePage path="/articles/:article_id" />
-        <ArticleCommentsPage path="/articles/:article_id/comments" />
-      </Router>
-    </main>
-  );
+class App extends Component {
+  state = {
+    username: "jessjelly"
+  };
+  render() {
+    const { username } = this.state;
+    return (
+      <main>
+        <HomeButton />
+        <Header />
+        <ManageCommentsButton username={username} />
+        <div className={styles.navBarContainer}>
+          <TopicsNavBar />
+        </div>
+        <Router>
+          <HomePage path="/" />
+          <SingleTopicPage path="/topics/:topic" />
+          <SingleArticlePage path="/articles/:article_id" />
+          <ArticleCommentsPage
+            path="/articles/:article_id/comments"
+            username={username}
+          />
+          <LoggedInUserComments path="/my_comments" username={username} />
+        </Router>
+      </main>
+    );
+  }
 }
 
 export default App;
