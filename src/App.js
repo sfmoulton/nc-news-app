@@ -7,6 +7,7 @@ import SingleTopicPage from "./components/SingleTopicPage";
 import TopicsNavBar from "./components/TopicsNavBar";
 import styles from "./css-styles/App.module.css";
 import SingleArticlePage from "./components/SingleArticlePage";
+import ArticleCommentsPage from "./components/ArticleCommentsPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <HomePage path="/" />
         <SingleTopicPage path="/topics/:topic" />
         <SingleArticlePage path="/articles/:article_id" />
+        <ArticleCommentsPage path="/articles/:article_id/comments" />
       </Router>
     </main>
   );

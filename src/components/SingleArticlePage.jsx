@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import axios from "axios";
 import styles from "../css-styles/SingleArticlePage.module.css";
 import LoadingIndicator from "./LoadingIndicator";
+import { Link } from "@reach/router";
 
 class SingleArticlePage extends Component {
   state = {
-    articleInfo: {}
+    articleInfo: {},
+    isLoading: true
   };
 
   getArticleInfo = () => {
@@ -19,7 +21,7 @@ class SingleArticlePage extends Component {
         }
       )
       .then(response => {
-        this.setState({ articleInfo: response.data.article });
+        this.setState({ articleInfo: response.data.article, isLoading: false });
       });
   };
 
@@ -34,15 +36,18 @@ class SingleArticlePage extends Component {
   };
 
   render() {
-    const { title, body, author } = this.state.articleInfo;
-    
-    //need to add in isLoading and the loading indicator
+    const { title, body, author, article_id } = this.state.articleInfo;
+    const { isLoading } = this.state;
+
+    if (isLoading)
+      return <LoadingIndicator LoadingIndicator={LoadingIndicator} />;
 
     return (
       <div className={styles.articleContainer}>
         <h2 className={styles.articleTitle}>{title}</h2>
         <h3 className={styles.articleAuthor}>Published By: {author}</h3>
         <p>{body}</p>
+        <Link to={`/articles/${article_id}/comments`}><button>Comments</button></Link>
       </div>
     );
   }

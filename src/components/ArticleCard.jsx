@@ -13,6 +13,7 @@ const ArticleCard = ({ articles }) => {
         <p>Created at: {article.created_at}</p>
         <p>Votes: {article.votes}</p>
         <p>Comment count: {article.comment_count}</p>
+        <Link to={`/articles/${article.article_id}/comments`}><button>Comments</button></Link>
         <Link to={`/articles/${article.article_id}`}><button>Read Me!</button></Link>
       </div>
     );
