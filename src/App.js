@@ -8,10 +8,12 @@ import TopicsNavBar from "./components/TopicsNavBar";
 import styles from "./css-styles/App.module.css";
 import SingleArticlePage from "./components/SingleArticlePage";
 import ArticleCommentsPage from "./components/ArticleCommentsPage";
+import HomeButton from "./components/HomeButton"
 
 function App() {
   return (
     <main>
+      <HomeButton />
       <Header />
       <div className={styles.navBarContainer}>
         <TopicsNavBar />

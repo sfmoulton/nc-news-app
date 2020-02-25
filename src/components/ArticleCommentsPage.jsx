@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LoadingIndicator from "./LoadingIndicator";
 import CommentCard from "./CommentCard";
 import axios from "axios";
+import AddArticleComment from "./AddArticleComment";
 
 class ArticleCommentsPage extends Component {
   state = {
@@ -30,12 +31,14 @@ class ArticleCommentsPage extends Component {
 
   render() {
     const { articleComments, isLoading } = this.state;
+    const { article_id } = this.props;
 
     if (isLoading)
       return <LoadingIndicator LoadingIndicator={LoadingIndicator} />;
 
     return (
       <div>
+        <AddArticleComment article_id={article_id}/>
         <CommentCard articleComments={articleComments} />
       </div>
     );
