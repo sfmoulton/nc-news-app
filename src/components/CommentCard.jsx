@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../css-styles/CommentCard.module.css";
 import RemoveUserComments from "./RemoveUserComments";
+import AddVote from "./AddVote";
 
 const CommentCard = ({
   comments,
@@ -22,6 +23,7 @@ const CommentCard = ({
         <h3>Published at: {created_at}</h3>
         <p>{body}</p>
         <h4>Votes: {votes}</h4>
+        <AddVote comment_id={comment_id} votes={votes} />
         {username === author && (
           <RemoveUserComments
             comment_id={comment_id}

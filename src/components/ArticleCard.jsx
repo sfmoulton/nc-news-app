@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../css-styles/ArticleCard.module.css";
 import { Link } from "@reach/router";
-import AddArticleVote from "./AddArticleVote";
+import AddVote from "./AddVote";
 
 const ArticleCard = ({ article, addArticleVote }) => {
   const {
@@ -20,7 +20,7 @@ const ArticleCard = ({ article, addArticleVote }) => {
       <p>Created at: {created_at}</p>
       <p>Comment count: {comment_count}</p>
       <div className={styles.buttonContainer}>
-        <AddArticleVote article_id={article_id} votes={votes} />
+        <AddVote article_id={article_id} votes={votes} />
         <Link to={`/articles/${article_id}/comments`}>
           <button className={styles.commentButton}>Comments</button>
         </Link>
