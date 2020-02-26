@@ -17,17 +17,19 @@ const ArticleCard = ({ article, addArticleVote }) => {
       <h2 className={styles.articleTitle}>{title}</h2>
       <p>Published by: {author}</p>
       <p>Created at: {created_at}</p>
-      <button value={article_id} onClick={() => addArticleVote(article_id)}>
+      {/* <button value={article_id} onClick={() => addArticleVote(article_id)}>
         Vote for me!
-      </button>
+      </button> */}
       <p>Votes: {votes}</p>
       <p>Comment count: {comment_count}</p>
-      <Link to={`/articles/${article_id}/comments`}>
-        <button>Comments</button>
-      </Link>
-      <Link to={`/articles/${article_id}`}>
-        <button>Read Me!</button>
-      </Link>
+      <div className={styles.buttonContainer}>
+        <Link to={`/articles/${article_id}/comments`}>
+          <button className={styles.commentButton}>Comments</button>
+        </Link>
+        <Link to={`/articles/${article_id}`}>
+          <button className={styles.readMeButton}>Read Me!</button>
+        </Link>
+      </div>
     </div>
   );
 };

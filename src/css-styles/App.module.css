@@ -6,5 +6,8 @@
   flex-direction: row;
   justify-content: space-around;
   background-color: teal;
-  width: 100%;
+  width: 95%;
+  /* need to amend the width here, and make a big container that will hold the whole  page, and will allow for borders along the page 
+  
+  need to sort out the padding underneath the title too - not sure why its this size */
 }

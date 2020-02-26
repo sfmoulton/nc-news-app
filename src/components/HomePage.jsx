@@ -23,40 +23,40 @@ class HomePage extends Component {
       });
   };
 
-  patchArticleVote = (article_id) => {
-    const requestBody = { inc_votes: 1 };
+  // patchArticleVote = (article_id) => {
+  //   const requestBody = { inc_votes: 1 };
 
-    return axios.patch(`https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}`, requestBody).then(response => {
-      return response.data.article.votes;
-    })
+  //   return axios.patch(`https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}`, requestBody).then(response => {
+  //     return response.data.article.votes;
+  //   })
     
     
-  }
+  // }
 
-  addArticleVote = (article_id) => {
-    const {articles} = this.state;
+  // addArticleVote = (article_id) => {
+  //   const {articles} = this.state;
 
-    this.patchArticleVote(article_id);
+  //   this.patchArticleVote(article_id);
 
-    const updatedArticle = articles.map(article => {
-      if (article.article_id === article_id) {
-        article.votes += 1;
-      }
-    })
+  //   const updatedArticle = articles.map(article => {
+  //     if (article.article_id === article_id) {
+  //       article.votes += 1;
+  //     }
+  //   })
 
-    const filteredArticles = articles.filter(article => 
-      article.article_id !== article_id)
+  //   const filteredArticles = articles.filter(article => 
+  //     article.article_id !== article_id)
 
-      console.log(filteredArticles);
+  //     console.log(filteredArticles);
       
 
-    this.setState(prevState => {
-      return {
-      //  articles: [updatedArticle, ...filteredArticles]
-      }
-    })
+  //   this.setState(prevState => {
+  //     return {
+  //     //  articles: [updatedArticle, ...filteredArticles]
+  //     }
+  //   })
   
-  }
+  // }
 
   componentDidMount() {
     this.getArticles();
