@@ -3,7 +3,7 @@ import Loader from "react-loader-spinner";
 
 const LoadingIndicator = () => {
   return (
-    <Loader type="BallTriangle" color="#somecolor" height={80} width={80} />
+    <Loader color="red" className="loader" type="Oval" height={50} width={50} />
   );
 };
 

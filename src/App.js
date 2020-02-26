@@ -9,6 +9,7 @@ import SingleArticlePage from "./components/SingleArticlePage";
 import ArticleCommentsPage from "./components/ArticleCommentsPage";
 import HomeButton from "./components/HomeButton";
 import styles from "./css-styles/App.module.css";
+import ErrorPage from "./components/ErrorPage";
 
 class App extends Component {
   state = {
@@ -31,6 +32,7 @@ class App extends Component {
             path="/articles/:article_id/comments"
             username={username}
           />
+          <ErrorPage default />
         </Router>
       </main>
     );

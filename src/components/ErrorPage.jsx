@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const ErrorPage = ({msg, status}) => {
+const ErrorPage = ({ err }) => {
+  const { msg, status } = err;
+
   return (
     <div>
-      <p>Error</p>
-      <p>{msg}</p>
+      <p>Error Message: {msg}</p>
       <p>{status}</p>
     </div>
   );

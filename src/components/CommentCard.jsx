@@ -22,7 +22,6 @@ const CommentCard = ({
         </h2>
         <h3>Published at: {created_at}</h3>
         <p>{body}</p>
-        <h4>Votes: {votes}</h4>
         <AddVote comment_id={comment_id} votes={votes} />
         {username === author && (
           <RemoveUserComments

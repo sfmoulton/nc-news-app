@@ -8,7 +8,7 @@ const HomeButton = () => {
   return (
     <div className={styles.buttonContainer}>
       <Link to="/">
-        <TiHomeOutline /> Home
+        <TiHomeOutline className={styles.homeButton}/>
       </Link>
     </div>
   );

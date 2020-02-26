@@ -4,3 +4,8 @@
   background-color: teal;
 }
 
+.homeButton {
+  color: white;
+  font-size: 4vh;
+  padding: 0.5vh;
+}

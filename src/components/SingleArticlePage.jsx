@@ -3,11 +3,14 @@ import styles from "../css-styles/SingleArticlePage.module.css";
 import LoadingIndicator from "./LoadingIndicator";
 import { Link } from "@reach/router";
 import Axios from "axios";
+import ArticleCommentsPage from "./ArticleCommentsPage";
+import ErrorPage from "./ErrorPage";
 
 class SingleArticlePage extends Component {
   state = {
     articleInfo: {},
-    isLoading: true
+    isLoading: true,
+    err: null
   };
 
   getArticleInfo = () => {
@@ -18,12 +21,21 @@ class SingleArticlePage extends Component {
       {
         params: { article_id }
       }
-    ).then(response => {
-      this.setState({
-        articleInfo: response.data.article,
-        isLoading: false
+    )
+      .then(response => {
+        this.setState({
+          articleInfo: response.data.article,
+          isLoading: false
+        });
+      })
+      .catch(err => {
+        this.setState({
+          err: {
+            msg: err.response.data.msg,
+            status: err.response.status
+          }
+        });
       });
-    });
   };
 
   componentDidMount() {
@@ -38,7 +50,9 @@ class SingleArticlePage extends Component {
 
   render() {
     const { title, body, author, article_id } = this.state.articleInfo;
-    const { isLoading } = this.state;
+    const { isLoading, err } = this.state;
+
+    if (err) return <ErrorPage err={err} />;
 
     if (isLoading)
       return <LoadingIndicator LoadingIndicator={LoadingIndicator} />;
@@ -51,6 +65,7 @@ class SingleArticlePage extends Component {
         <Link to={`/articles/${article_id}/comments`}>
           <button>Comments</button>
         </Link>
+        <ArticleCommentsPage />
       </div>
     );
   }
