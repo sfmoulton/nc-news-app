@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import LoadingIndicator from "./LoadingIndicator";
 import CommentCard from "./CommentCard";
-import axios from "axios";
 import AddArticleComment from "./AddArticleComment";
-import styles from "../css-styles/ArticleCommentsPage.module.css"
+import styles from "../css-styles/ArticleCommentsPage.module.css";
+import Axios from "axios";
+
 
 class ArticleCommentsPage extends Component {
   state = {
@@ -14,43 +15,39 @@ class ArticleCommentsPage extends Component {
   getArticleComments = () => {
     const { article_id } = this.props;
 
-    axios
-      .get(
-        `https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}/comments`
-      )
-      .then(response => {
-        this.setState({
-          comments: response.data.comments,
-          isLoading: false
-        });
+    Axios.get(
+      `https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}/comments`
+    ).then(response => {
+      this.setState({
+        comments: response.data.comments,
+        isLoading: false
       });
+    });
   };
 
   componentDidMount() {
     this.getArticleComments();
-  };
+  }
 
   postNewArticleComment = requestBody => {
     const { article_id } = this.props;
 
-    return axios
-      .post(
-        `https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}/comments`,
-        requestBody
-      )
-      .then(({ data }) => {
-        return data.comment;
-      });
+    return Axios.post(
+      `https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}/comments`,
+      requestBody
+    ).then(({ data }) => {
+      return data.comment;
+    });
   };
 
   addCommentToList = newComment => {
-    this.setState((state) => {
+    this.setState(state => {
       return { comments: [newComment, ...state.comments] };
     });
   };
 
   deleteComment = comment_id => {
-    return axios.delete(
+    return Axios.delete(
       `https://steph-nc-news-app.herokuapp.com/api/comments/${comment_id}`
     );
   };
@@ -59,22 +56,25 @@ class ArticleCommentsPage extends Component {
     const { comments } = this.state;
     this.deleteComment(comment_id).then(() => {
       const filteredComments = comments.filter(comment => {
-      return comment.comment_id !== comment_id;
+        return comment.comment_id !== comment_id;
+      });
+      this.setState({ comments: filteredComments });
     });
-    this.setState({ comments: filteredComments });
-    })
-    
   };
 
   render() {
     const { comments, isLoading } = this.state;
     const { article_id, username } = this.props;
 
+    console.log(this.props);
+    
+
     if (isLoading)
       return <LoadingIndicator LoadingIndicator={LoadingIndicator} />;
 
     return (
       <div>
+        
         <AddArticleComment
           article_id={article_id}
           postNewArticleComment={this.postNewArticleComment}

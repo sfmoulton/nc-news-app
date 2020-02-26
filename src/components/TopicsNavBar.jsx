@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import Axios from "axios";
 import TopicButton from "./TopicButton";
 
 class TopicsNavBar extends Component {
@@ -8,7 +8,7 @@ class TopicsNavBar extends Component {
   };
 
   getAllTopics = () => {
-    axios
+    Axios
       .get("https://steph-nc-news-app.herokuapp.com/api/topics")
       .then(response => {
         this.setState({ topics: response.data.topics });

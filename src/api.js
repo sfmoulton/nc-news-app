@@ -13,3 +13,4 @@ export const patchCommentVotes = (comment_id, voteChange) => {
     { inc_votes: voteChange }
   );
 };
+

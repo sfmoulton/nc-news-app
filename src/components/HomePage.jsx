@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import styles from "../css-styles/HomePage.module.css";
-import axios from "axios";
 import LoadingIndicator from "./LoadingIndicator";
 import ArticlesList from "./ArticlesList";
 import ArticlesSortBy from "./ArticlesSortBy";
+import Axios from "axios";
+
 
 class HomePage extends Component {
   state = {
@@ -11,8 +12,8 @@ class HomePage extends Component {
     isLoading: true
   };
 
-  getArticles = (sort_by) => {
-    axios
+  getArticles = sort_by => {
+    Axios
       .get("https://steph-nc-news-app.herokuapp.com/api/articles", {
         params: {
           sort_by
@@ -25,7 +26,7 @@ class HomePage extends Component {
 
   componentDidMount() {
     this.getArticles();
-  };
+  }
 
   render() {
     const { articles, isLoading } = this.state;
@@ -36,7 +37,10 @@ class HomePage extends Component {
     return (
       <div className={styles.articlesList}>
         <ArticlesSortBy getArticles={this.getArticles} />
-        <ArticlesList articles={articles} addArticleVote={this.addArticleVote} />
+        <ArticlesList
+          articles={articles}
+          addArticleVote={this.addArticleVote}
+        />
       </div>
     );
   }
