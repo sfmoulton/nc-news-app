@@ -23,6 +23,41 @@ class HomePage extends Component {
       });
   };
 
+  patchArticleVote = (article_id) => {
+    const requestBody = { inc_votes: 1 };
+
+    return axios.patch(`https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}`, requestBody).then(response => {
+      return response.data.article.votes;
+    })
+    
+    
+  }
+
+  addArticleVote = (article_id) => {
+    const {articles} = this.state;
+
+    this.patchArticleVote(article_id);
+
+    const updatedArticle = articles.map(article => {
+      if (article.article_id === article_id) {
+        article.votes += 1;
+      }
+    })
+
+    const filteredArticles = articles.filter(article => 
+      article.article_id !== article_id)
+
+      console.log(filteredArticles);
+      
+
+    this.setState(prevState => {
+      return {
+      //  articles: [updatedArticle, ...filteredArticles]
+      }
+    })
+  
+  }
+
   componentDidMount() {
     this.getArticles();
   };
@@ -36,7 +71,7 @@ class HomePage extends Component {
     return (
       <div className={styles.articlesList}>
         <ArticlesSortBy getArticles={this.getArticles} />
-        <ArticlesList articles={articles} />
+        <ArticlesList articles={articles} addArticleVote={this.addArticleVote} />
       </div>
     );
   }

@@ -2,18 +2,30 @@ import React from "react";
 import styles from "../css-styles/ArticleCard.module.css";
 import { Link } from "@reach/router";
 
-const ArticleCard = ({ article }) => {
+const ArticleCard = ({ article, addArticleVote }) => {
+  const {
+    article_id,
+    title,
+    author,
+    created_at,
+    votes,
+    comment_count
+  } = article;
+
   return (
-    <div key={article.article_id} className={styles.articleContainer}>
-      <h2 className={styles.articleTitle}>{article.title}</h2>
-      <p>Published by: {article.author}</p>
-      <p>Created at: {article.created_at}</p>
-      <p>Votes: {article.votes}</p>
-      <p>Comment count: {article.comment_count}</p>
-      <Link to={`/articles/${article.article_id}/comments`}>
+    <div key={article_id} className={styles.articleContainer}>
+      <h2 className={styles.articleTitle}>{title}</h2>
+      <p>Published by: {author}</p>
+      <p>Created at: {created_at}</p>
+      <button value={article_id} onClick={() => addArticleVote(article_id)}>
+        Vote for me!
+      </button>
+      <p>Votes: {votes}</p>
+      <p>Comment count: {comment_count}</p>
+      <Link to={`/articles/${article_id}/comments`}>
         <button>Comments</button>
       </Link>
-      <Link to={`/articles/${article.article_id}`}>
+      <Link to={`/articles/${article_id}`}>
         <button>Read Me!</button>
       </Link>
     </div>
