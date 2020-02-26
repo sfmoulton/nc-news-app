@@ -8,6 +8,7 @@ import TopicsNavBar from "./components/TopicsNavBar";
 import SingleArticlePage from "./components/SingleArticlePage";
 import ArticleCommentsPage from "./components/ArticleCommentsPage";
 import HomeButton from "./components/HomeButton";
+import styles from "./css-styles/App.module.css";
 
 class App extends Component {
   state = {
@@ -19,8 +20,9 @@ class App extends Component {
       <main>
         <HomeButton />
         <Header />
-
-        <TopicsNavBar />
+        <div className={styles.navBarContainer}>
+          <TopicsNavBar />
+        </div>
         <Router>
           <HomePage path="/" />
           <SingleTopicPage path="/topics/:topic" />

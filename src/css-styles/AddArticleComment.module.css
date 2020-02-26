@@ -1,0 +1,13 @@
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  background-color: lightseagreen;
+}
+
+.commentInputBox {
+  padding: 2.5vh;
+  align-self: center;
+  box-sizing: border-box;
+}

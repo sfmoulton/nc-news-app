@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import styles from "../css-styles/TopicsNavBar.module.css";
 import TopicButton from "./TopicButton";
 
 class TopicsNavBar extends Component {
@@ -18,15 +17,14 @@ class TopicsNavBar extends Component {
 
   componentDidMount() {
     this.getAllTopics();
-  };
+  }
 
   render() {
     const { topics } = this.state;
-    
 
     return topics.map(topic => {
       return (
-        <div key={topic.slug} >
+        <div key={topic.slug}>
           <TopicButton topic={topic} />
         </div>
       );

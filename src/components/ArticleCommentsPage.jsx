@@ -3,6 +3,7 @@ import LoadingIndicator from "./LoadingIndicator";
 import CommentCard from "./CommentCard";
 import axios from "axios";
 import AddArticleComment from "./AddArticleComment";
+import styles from "../css-styles/ArticleCommentsPage.module.css"
 
 class ArticleCommentsPage extends Component {
   state = {
@@ -80,7 +81,7 @@ class ArticleCommentsPage extends Component {
           username={username}
           addCommentToList={this.addCommentToList}
         />
-        <div>
+        <div className={styles.commentsList}>
           <CommentCard
             comments={comments}
             username={username}

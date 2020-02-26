@@ -1,7 +1,9 @@
 .commentContainer {
   text-align: center;
   align-self: center;
-  width: 100%;
   border: teal solid 3pt;
   margin: 3vh 0 3vh 0;
+  width: 80%
 }
+
+

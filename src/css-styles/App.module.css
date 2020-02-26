@@ -1,1 +1,10 @@
 
+.navBarContainer {
+  margin: 2vh 0 2vh 0;
+  padding: 2vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: teal;
+  width: 100%;
+}

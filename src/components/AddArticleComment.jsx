@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from "../css-styles/AddArticleComment.module.css"
 
 class AddArticleComment extends Component {
   state = {
@@ -27,15 +28,16 @@ class AddArticleComment extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.postContainer}>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Post new comment:
+            Add comment:
             <input
               required
               type="text"
               onChange={event => this.handleChange(event.target.value, "body")}
               value={this.state.body}
+              className={styles.commentInputBox}
             />
           </label>
           <button>Post</button>
