@@ -12,10 +12,19 @@
 	background: white;
 	color: #084C61;
 	padding: 1vh;
+	box-shadow: 1px 1px 8px #330033;
 }
 
 .formLabel {
 	font-family: 'Quicksand';
+}
+
+.goButton {
+	font-family: 'Quicksand';
+	background-color: #E3B505;
+	font-size: 2vh;
+	padding: 1vh;
+	color: white;
 }
 
 /* @media only screen and (max-width: 600px) {

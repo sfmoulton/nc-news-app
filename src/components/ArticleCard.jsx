@@ -18,7 +18,7 @@ const ArticleCard = ({ article, addArticleVote }) => {
     <div key={article_id} className={styles.articleContainer}>
       <h2 className={styles.articleTitle}>{title}</h2>
       <p className={styles.p1}>
-        <b>Posted by:</b> {author}
+        By {author}
       </p>
       <p className={styles.p2}>
         <b>Published: </b>

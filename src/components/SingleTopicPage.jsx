@@ -3,7 +3,7 @@ import Axios from "axios";
 import ArticlesList from "./ArticlesList";
 import styles from "../css-styles/SingleTopicPage.module.css";
 import LoadingIndicator from "./LoadingIndicator";
-import ErrorPage from "./ErrorPage"
+import ErrorPage from "./ErrorPage";
 
 class SingleTopicPage extends Component {
   state = {
@@ -19,16 +19,18 @@ class SingleTopicPage extends Component {
       params: {
         topic
       }
-    }).then(response => {
-      this.setState({ articles: response.data.articles, isLoading: false });
-    }).catch(err => {
-      this.setState({
-        err: {
-          msg: err.response.data.msg,
-          status: err.response.status
-        }
+    })
+      .then(response => {
+        this.setState({ articles: response.data.articles, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({
+          err: {
+            msg: err.response.data.msg,
+            status: err.response.status
+          }
+        });
       });
-    });
   };
 
   componentDidUpdate(prevProps) {

@@ -10,7 +10,7 @@ const UserDetailsHeader = ({ username }) => {
   return (
     <div className={styles.userDetailsContainer}>
       <p className={styles.loggedInUser}>
-        Welcome, {username}! <span>{""}</span>
+        Welcome, {username}! <span role="img" label="star">{"⭐️"}</span>
       </p>
       <p className={styles.date}>
         <Moment format="D MMM YYYY" withTitle>
