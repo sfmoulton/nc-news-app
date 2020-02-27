@@ -60,11 +60,15 @@ class SingleArticlePage extends Component {
     return (
       <div className={styles.articleContainer}>
         <h2 className={styles.articleTitle}>{title}</h2>
-        <h3 className={styles.articleAuthor}>Published By: {author}</h3>
-        <p>{body}</p>
-        <Link to={`/articles/${article_id}/comments`}>
-          <button>Comments</button>
-        </Link>
+        <h3 className={styles.articleAuthor}><b>Published By: </b> {author}</h3>
+        <div className={styles.bodyContainer}>
+          <p className={styles.body}>{body}</p>
+        </div>
+        <div className={styles.buttonContainer}>
+          <Link to={`/articles/${article_id}/comments`}>
+            <button className={styles.commentButton}>View Comments</button>
+          </Link>
+        </div>
       </div>
     );
   }

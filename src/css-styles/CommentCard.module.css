@@ -1,9 +1,21 @@
 .commentContainer {
   text-align: center;
   align-self: center;
-  border: teal solid 3pt;
+  background-color: teal;
   margin: 3vh 0 3vh 0;
   width: 80%
 }
 
+.h2 {
+  color: white;
+}
 
+.h3 {
+  color: white;
+}
+
+.body {
+  color: white;
+  padding: 3vh;
+  text-align: center;
+}

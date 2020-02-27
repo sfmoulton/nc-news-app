@@ -29,9 +29,9 @@ class AddArticleComment extends Component {
   render() {
     return (
       <div className={styles.postContainer}>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Add comment:
+        <form onSubmit={this.handleSubmit} className={styles.form}>
+          <label className={styles.textBoxLabel}>
+            Comment:
             <input
               required
               type="text"
@@ -40,7 +40,7 @@ class AddArticleComment extends Component {
               className={styles.commentInputBox}
             />
           </label>
-          <button>Post</button>
+          <button className={styles.postButton} >Post</button>
         </form>
       </div>
     );

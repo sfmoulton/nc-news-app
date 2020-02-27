@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../css-styles/CommentCard.module.css";
 import RemoveUserComments from "./RemoveUserComments";
 import AddVote from "./AddVote";
+import Moment from "react-moment"
 
 const CommentCard = ({
   comments,
@@ -14,14 +15,17 @@ const CommentCard = ({
 
     return (
       <div key={comment_id} className={styles.commentContainer}>
-        <h2>
-          {author}{" "}
+        <h2 className={styles.h2}>
           <span role="img" label="hand with pen">
             {"✍🏻"}
           </span>
+          {"    "}
+          {author}
         </h2>
-        <h3>Published at: {created_at}</h3>
-        <p>{body}</p>
+        <h3 className={styles.h3}>
+          Published: <Moment fromNow>{created_at}</Moment>
+        </h3>
+        <p className={styles.body}>{body}</p>
         <AddVote comment_id={comment_id} votes={votes} />
         {username === author && (
           <RemoveUserComments

@@ -21,11 +21,11 @@ const ArticleCard = ({ article, addArticleVote }) => {
         <b>Posted by:</b> {author}
       </p>
       <p className={styles.p2}>
-        <b>Published: </b><Moment fromNow>{created_at}</Moment> 
+        <b>Published: </b>
+        <Moment fromNow>{created_at}</Moment>
       </p>
       <p className={styles.p2}>{comment_count} comments</p>
       <div className={styles.buttonContainer}>
-        <AddVote article_id={article_id} votes={votes} />
         <Link to={`/articles/${article_id}/comments`}>
           <button className={styles.commentButton}>Comments</button>
         </Link>
@@ -33,6 +33,7 @@ const ArticleCard = ({ article, addArticleVote }) => {
           <button className={styles.readMeButton}>Read Me!</button>
         </Link>
       </div>
+      <AddVote article_id={article_id} votes={votes} />
     </div>
   );
 };

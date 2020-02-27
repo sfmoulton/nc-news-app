@@ -1,7 +1,13 @@
 .commentsList {
   display: flex;
-  margin: 10%;
+  /* margin: 10%; */
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+.h2 {
+  color: teal;
+  font-size: 3.5vh;
+  text-align: center;
 }
 

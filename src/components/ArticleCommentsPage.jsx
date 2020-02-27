@@ -95,7 +95,7 @@ class ArticleCommentsPage extends Component {
 
     return (
       <div>
-        <h2>{articleTitle}</h2>
+        <h2 className={styles.h2}>{articleTitle}</h2>
         <AddArticleComment
           article_id={article_id}
           postNewArticleComment={this.postNewArticleComment}

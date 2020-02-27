@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../api";
 import ErrorPage from "./ErrorPage";
-import styles from "../css-styles/AddVote.module.css"
+import styles from "../css-styles/AddVote.module.css";
 
 class AddVote extends Component {
   state = {
@@ -47,15 +47,19 @@ class AddVote extends Component {
           disabled={hasVoted}
           onClick={() => this.updateVotes(1)}
         >
-          +
+          <span role="img" label="plus">
+            {"➕"}
+          </span>
         </button>
-        <p>Votes: {votes + voteChange}</p>
+        <p className={styles.votes}>Current votes: {votes + voteChange}</p>
         <button
           className={styles.voteButton}
           disabled={hasVoted}
           onClick={() => this.updateVotes(-1)}
         >
-          -
+          <span role="img" label="minus">
+            {"➖"}
+          </span>
         </button>
         {err && <ErrorPage err={err} />}
       </div>
