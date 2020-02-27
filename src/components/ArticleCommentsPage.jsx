@@ -5,6 +5,7 @@ import AddArticleComment from "./AddArticleComment";
 import styles from "../css-styles/ArticleCommentsPage.module.css";
 import Axios from "axios";
 import ErrorPage from "./ErrorPage";
+import { Link } from "@reach/router";
 
 class ArticleCommentsPage extends Component {
   state = {
@@ -19,19 +20,21 @@ class ArticleCommentsPage extends Component {
 
     Axios.get(
       `https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}/comments`
-    ).then(response => {
-      this.setState({
-        comments: response.data.comments,
-        isLoading: false
+    )
+      .then(response => {
+        this.setState({
+          comments: response.data.comments,
+          isLoading: false
+        });
+      })
+      .catch(err => {
+        this.setState({
+          err: {
+            msg: err.response.data.msg,
+            status: err.response.status
+          }
+        });
       });
-    }).catch(err => {
-      this.setState({
-        err: {
-          msg: err.response.data.msg,
-          status: err.response.status
-        }
-      });
-    });
   };
 
   getArticleTitle = () => {
@@ -96,12 +99,19 @@ class ArticleCommentsPage extends Component {
     return (
       <div>
         <h2 className={styles.h2}>{articleTitle}</h2>
-        <AddArticleComment
-          article_id={article_id}
-          postNewArticleComment={this.postNewArticleComment}
-          username={username}
-          addCommentToList={this.addCommentToList}
-        />
+        <div className={styles.buttonContainer}>
+          <div className={styles.buttonSurround}>
+            <Link to={`/articles/${article_id}`}>
+              <button className={styles.articleButton}>Go to article</button>
+            </Link>
+          </div>
+          <AddArticleComment
+            article_id={article_id}
+            postNewArticleComment={this.postNewArticleComment}
+            username={username}
+            addCommentToList={this.addCommentToList}
+          />
+        </div>
         <div className={styles.commentsList}>
           <CommentCard
             comments={comments}

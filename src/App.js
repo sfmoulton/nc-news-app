@@ -11,13 +11,18 @@ import HomeButton from "./components/HomeButton";
 import styles from "./css-styles/App.module.css";
 import ErrorPage from "./components/ErrorPage";
 import UserDetailsHeader from "./components/UserDetailsHeader";
+import Footer from "./components/Footer";
 
 class App extends Component {
   state = {
-    username: "jessjelly"
+    username: "jessjelly",
+    defaultErr: {
+      defaultMsg: "Invalid URL",
+      defaultStatus: 400
+    }
   };
   render() {
-    const { username } = this.state;
+    const { username, defaultErr } = this.state;
     return (
       <main>
         <div className={styles.pageHeaderContainer}>
@@ -36,7 +41,7 @@ class App extends Component {
             path="/articles/:article_id/comments"
             username={username}
           />
-          <ErrorPage default />
+          <ErrorPage default defaultErr={defaultErr} />
         </Router>
       </main>
     );

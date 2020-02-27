@@ -2,10 +2,9 @@
   text-align: center;
   align-self: center;
   width: 100%;
-  border: teal solid 3pt;
   margin: 3vh 0 3vh 0;
   display: grid;
-  background-color: teal;
+  background-color: #4F6D7A;
   /* need to add three columns and rows, and follow the pattern */
 }
 
@@ -16,12 +15,12 @@
 }
 
 .commentButton {
-  color: #494949 !important;
+  color: #084C61 !important;
   text-transform: uppercase;
   text-decoration: none;
   background: #ffffff;
   padding: 1.3vh;
-  border: 4px solid #494949 !important;
+  border: 4px solid #084C61 !important;
   display: inline-block;
   transition: all 0.4s ease 0s;
   font-size: 1.7vh;
@@ -30,19 +29,19 @@
 
 .commentButton:hover {
   color: #ffffff !important;
-  background: #94097f;
-  border-color: #94097f !important;
+  background: #DB504A;
+  border-color: #DB504A !important;
   transition: all 0.4s ease 0s;
   font-size: 1.7vh;
 }
 
 .readMeButton {
-  color: #494949 !important;
+  color: #084C61 !important;
   text-transform: uppercase;
   text-decoration: none;
   background: #ffffff;
   padding: 1.3vh;
-  border: 4px solid #494949 !important;
+  border: 4px solid #084C61 !important;
   display: inline-block;
   transition: all 0.4s ease 0s;
   font-size: 1.7vh;
@@ -51,8 +50,8 @@
 
 .readMeButton:hover {
   color: #ffffff !important;
-  background: #94097f;
-  border-color: #94097f !important;
+  background: #DB504A;
+  border-color: #DB504A !important;
   transition: all 0.4s ease 0s;
   font-size: 1.7vh;
 }

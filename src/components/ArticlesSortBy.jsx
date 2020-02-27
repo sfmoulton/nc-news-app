@@ -31,7 +31,7 @@ class ArticlesSortBy extends Component {
             </select>
           </label>
           <label></label>
-          <button>Go!</button>
+          <button className={styles.goButton}>Go!</button>
         </form>
       </div>
     );
