@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../api";
 import ErrorPage from "./ErrorPage";
+import styles from "../css-styles/AddVote.module.css"
 
 class AddVote extends Component {
   state = {
@@ -40,13 +41,21 @@ class AddVote extends Component {
     const { voteChange, err, hasVoted } = this.state;
 
     return (
-      <div>
-        <button disabled={hasVoted} onClick={() => this.updateVotes(1)}>
-          Up
+      <div className={styles.voteContainer}>
+        <button
+          className={styles.voteButton}
+          disabled={hasVoted}
+          onClick={() => this.updateVotes(1)}
+        >
+          +
         </button>
         <p>Votes: {votes + voteChange}</p>
-        <button disabled={hasVoted} onClick={() => this.updateVotes(-1)}>
-          Down
+        <button
+          className={styles.voteButton}
+          disabled={hasVoted}
+          onClick={() => this.updateVotes(-1)}
+        >
+          -
         </button>
         {err && <ErrorPage err={err} />}
       </div>

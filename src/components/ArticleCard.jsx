@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../css-styles/ArticleCard.module.css";
 import { Link } from "@reach/router";
 import AddVote from "./AddVote";
+import Moment from "react-moment";
 
 const ArticleCard = ({ article, addArticleVote }) => {
   const {
@@ -16,9 +17,13 @@ const ArticleCard = ({ article, addArticleVote }) => {
   return (
     <div key={article_id} className={styles.articleContainer}>
       <h2 className={styles.articleTitle}>{title}</h2>
-      <p>Published by: {author}</p>
-      <p>Created at: {created_at}</p>
-      <p>Comment count: {comment_count}</p>
+      <p className={styles.p1}>
+        <b>Posted by:</b> {author}
+      </p>
+      <p className={styles.p2}>
+        <b>Published: </b><Moment fromNow>{created_at}</Moment> 
+      </p>
+      <p className={styles.p2}>{comment_count} comments</p>
       <div className={styles.buttonContainer}>
         <AddVote article_id={article_id} votes={votes} />
         <Link to={`/articles/${article_id}/comments`}>

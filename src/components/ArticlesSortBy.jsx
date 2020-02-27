@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from "../css-styles/ArticlesSortBy.module.css";
 
 class ArticlesSortBy extends Component {
   state = {
@@ -19,20 +20,20 @@ class ArticlesSortBy extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Sort articles by:
-          <select id="sort_by" onChange={this.handleChange}>
-            <option value="created_at">Most Recently Published</option>
-            <option value="comment_count">Highest Comment Count</option>
-            <option value="votes">Highest Reader Votes</option>
-          </select>
-        </label>
-        <label> 
-
-        </label>
-        <button>Sort!</button>
-      </form>
+      <div className={styles.formContainer}>
+        <form onSubmit={this.handleSubmit} className={styles.form}>
+          <label className={styles.formLabel}>
+            Sort by: 
+            <select className={styles.dropDown} id="sort_by" onChange={this.handleChange}>
+              <option value="created_at">Most Recently Published</option>
+              <option value="comment_count">Highest Comment Count</option>
+              <option value="votes">Highest Reader Votes</option>
+            </select>
+          </label>
+          <label></label>
+          <button>Go!</button>
+        </form>
+      </div>
     );
   }
 }

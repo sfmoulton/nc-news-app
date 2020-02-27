@@ -6,8 +6,14 @@
   flex-direction: row;
   justify-content: space-around;
   background-color: teal;
-  width: 95%;
-  /* need to amend the width here, and make a big container that will hold the whole  page, and will allow for borders along the page 
-  
-  need to sort out the padding underneath the title too - not sure why its this size */
+  width: 100%;
 }
+
+.pageHeaderContainer {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 3fr 1fr;
+  background-color: teal;
+  width: 100%;
+}
+

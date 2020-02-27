@@ -65,10 +65,11 @@ class SingleArticlePage extends Component {
         <Link to={`/articles/${article_id}/comments`}>
           <button>Comments</button>
         </Link>
-        <ArticleCommentsPage />
       </div>
     );
   }
 }
+
+// maybe look to add the comments in to here?
 
 export default SingleArticlePage;

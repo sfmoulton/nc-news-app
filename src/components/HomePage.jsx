@@ -40,13 +40,15 @@ class HomePage extends Component {
       return <LoadingIndicator LoadingIndicator={LoadingIndicator} />;
 
     return (
+      <>
+      <ArticlesSortBy getArticles={this.getArticles} />
       <div className={styles.articlesList}>
-        <ArticlesSortBy getArticles={this.getArticles} />
         <ArticlesList
           articles={articles}
           addArticleVote={this.addArticleVote}
         />
       </div>
+      </>
     );
   }
 }

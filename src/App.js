@@ -19,8 +19,10 @@ class App extends Component {
     const { username } = this.state;
     return (
       <main>
-        <HomeButton />
-        <Header />
+        <div className={styles.pageHeaderContainer}>
+          <HomeButton />
+          <Header />
+        </div>
         <div className={styles.navBarContainer}>
           <TopicsNavBar />
         </div>

@@ -5,6 +5,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <h1 className={styles.h1}>NC News</h1>
+      <h2 className={styles.h2}>Read. Post. Learn.</h2>
     </header>
   );
 };
