@@ -1,6 +1,6 @@
 .articlesList {
   display: flex;
-  margin: 10%;
+  margin: 0 10% 0 10%;
   flex-direction: column;
   flex-wrap: wrap;
 }

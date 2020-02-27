@@ -22,9 +22,9 @@ const CommentCard = ({
           {"    "}
           {author}
         </h2>
-        <h3 className={styles.h3}>
-          Published: <Moment fromNow>{created_at}</Moment>
-        </h3>
+        <p className={styles.p1}>
+          <b>Published:</b> <Moment fromNow>{created_at}</Moment>
+        </p>
         <p className={styles.body}>{body}</p>
         <AddVote comment_id={comment_id} votes={votes} />
         {username === author && (

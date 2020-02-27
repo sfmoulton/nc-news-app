@@ -8,6 +8,7 @@
   color: #084c61;
   font-size: 4vh;
   text-align: center;
+  font-family: 'Quicksand';
 }
 
 .buttonSurround {
@@ -27,6 +28,7 @@
   width: 30vh;
   margin: 2vh;
   align-self: center;
+  font-family: 'Quicksand';
 }
 
 .articleButton:hover {

@@ -8,14 +8,18 @@
 
 .h2 {
   color: white;
+  font-family: 'Quicksand';
+  font-size: 3vh;
 }
 
-.h3 {
+.p1 {
   color: white;
+  font-family: 'Quicksand';
 }
 
 .body {
   color: white;
   padding: 3vh;
   text-align: center;
+  font-family: 'Quicksand';
 }

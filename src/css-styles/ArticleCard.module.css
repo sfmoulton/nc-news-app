@@ -12,6 +12,8 @@
   font-size: 3.5vh;
   color: white;
   padding: 0 2vh 0 2vh;
+  font-family: 'Quicksand';
+  font-weight: 600;
 }
 
 .commentButton {
@@ -25,6 +27,7 @@
   transition: all 0.4s ease 0s;
   font-size: 1.7vh;
   width: 15vh;
+  font-family: 'Quicksand';
 }
 
 .commentButton:hover {
@@ -46,6 +49,7 @@
   transition: all 0.4s ease 0s;
   font-size: 1.7vh;
   width: 15vh;
+  font-family: 'Quicksand';
 }
 
 .readMeButton:hover {
@@ -65,14 +69,17 @@
 .p1 {
   color: white;
   font-size: 2.5vh;
+  font-family: 'Quicksand';
 }
 
 .p2 {
   color:white;
   font-size: 2vh;
+  font-family: 'Quicksand';
 }
 
 .p2 {
   color: white;
   font-size: 2vh;
+  font-family: 'Quicksand';
 }
