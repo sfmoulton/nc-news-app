@@ -15,5 +15,8 @@
   grid-template-rows: 3fr 1fr;
   background-color: teal;
   width: 100%;
+  grid-template-areas: 
+    "1 2 3"
+    "4 5 6";
 }
 

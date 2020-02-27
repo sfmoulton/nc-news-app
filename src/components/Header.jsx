@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from "../css-styles/Header.module.css"
+import React from "react";
+import styles from "../css-styles/Header.module.css";
 
-const Header = () => {
+const Header = ({ username }) => {
   return (
     <header className={styles.header}>
       <h1 className={styles.h1}>NC News</h1>
