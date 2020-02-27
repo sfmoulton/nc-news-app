@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "../css-styles/AddArticleComment.module.css"
+import styles from "../css-styles/AddArticleComment.module.css";
 
 class AddArticleComment extends Component {
   state = {
@@ -22,25 +22,29 @@ class AddArticleComment extends Component {
     });
   };
 
-  componentDidUpdate(prevState) {
-    
-  }
+  componentDidUpdate(prevState) {}
 
   render() {
     return (
       <div className={styles.postContainer}>
         <form onSubmit={this.handleSubmit} className={styles.form}>
-          <label className={styles.textBoxLabel}>
-            Comment:
-            <input
-              required
-              type="text"
-              onChange={event => this.handleChange(event.target.value, "body")}
-              value={this.state.body}
-              className={styles.commentInputBox}
-            />
-          </label>
-          <button className={styles.postButton} >Post</button>
+          <div className={styles.inputContainer}>
+            <label className={styles.textBoxLabel}>
+              Comment:
+              <input
+                required
+                type="text"
+                onChange={event =>
+                  this.handleChange(event.target.value, "body")
+                }
+                value={this.state.body}
+                className={styles.commentInputBox}
+              />
+            </label>
+          </div>
+          <div className={styles.buttonContainer}>
+            <button className={styles.postButton}>Post</button>
+          </div>
         </form>
       </div>
     );
