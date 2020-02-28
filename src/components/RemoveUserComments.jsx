@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from "../css-styles/RemoveUserComments.module.css";
 
 class RemoveUserComments extends Component {
   render() {
@@ -7,6 +8,7 @@ class RemoveUserComments extends Component {
     return (
       <div>
         <button
+          className={styles.deleteCommentButton}
           value={comment_id}
           onClick={() => removeCommentFromState(comment_id)}
         >

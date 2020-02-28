@@ -1,12 +1,12 @@
 .postContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   text-align: center;
   margin: auto;
 }
 
 .textBoxLabel {
-  color: #084C61;
+  color: #084c61;
   padding: 0 1vh 0 0;
   align-self: center;
   font-family: Quicksand;
@@ -14,7 +14,7 @@
 }
 
 .commentInputBox {
-  border: 5px solid #56A3A6;
+  border: 5px solid #56a3a6;
   -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1),
     0 0 16px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
@@ -22,31 +22,31 @@
   padding: 25px;
   background: rgba(255, 255, 255, 0.5);
   margin: 0 0 10px 0;
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
 }
 
 .postButton {
-  color: #084C61 !important;
+  color: #084c61 !important;
   text-transform: uppercase;
   background: #ffffff;
   padding: 20px;
-  border: 4px solid #084C61 !important;
+  border: 4px solid #084c61 !important;
   border-radius: 6px;
-  display: inline-block;
+  display: inline;
   transition: all 0.3s ease 0s;
   font-size: 1.5vh;
-  font-family: "Quicksand"
+  font-family: "Quicksand";
 }
 
 .postButton:hover {
-  color: #084C61 !important;
+  color: #084c61 !important;
   border-radius: 50px;
-  border-color: #084C61 !important;
+  border-color: #084c61 !important;
   transition: all 0.3s ease 0s;
 }
 
 .postButton:after {
-  color: #084C61 !important;
+  color: #084c61 !important;
   text-transform: uppercase;
   background: #ffffff;
   padding: 20px;
@@ -55,3 +55,9 @@
   display: inline-block;
   transition: all 0.3s ease 0s;
 }
+
+/* @media only screen and (max-width: 600px) {
+  
+} */
+
+/* need to get comment box in column when small screen, rows when small screen */
