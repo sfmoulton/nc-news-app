@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import styles from "../css-styles/AddArticleComment.module.css";
+import LoadingIndicator from "./LoadingIndicator";
 
 class AddArticleComment extends Component {
   state = {
-    body: ""
+    body: "",
+    isLoading: null
   };
 
   handleChange = (value, key) => {
@@ -16,15 +18,17 @@ class AddArticleComment extends Component {
     const { postNewArticleComment, username, addCommentToList } = this.props;
     const requestBody = { username, body };
 
+    this.setState({ isLoading: true });
+
     postNewArticleComment(requestBody).then(newComment => {
       addCommentToList(newComment);
-      this.setState({ body: "" });
+      this.setState({ body: "", isLoading: false });
     });
   };
 
-  componentDidUpdate(prevState) {}
-
   render() {
+    const { isLoading } = this.state;
+
     return (
       <div className={styles.postContainer}>
         <form onSubmit={this.handleSubmit} className={styles.form}>
@@ -42,9 +46,14 @@ class AddArticleComment extends Component {
               />
             </label>
           </div>
-          <div className={styles.buttonContainer}>
-            <button className={styles.postButton}>Post</button>
-          </div>
+
+          {isLoading ? (
+            <LoadingIndicator />
+          ) : (
+            <div className={styles.buttonContainer}>
+              <button className={styles.postButton}>Post</button>
+            </div>
+          )}
         </form>
       </div>
     );

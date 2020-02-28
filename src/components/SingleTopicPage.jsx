@@ -35,6 +35,7 @@ class SingleTopicPage extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.topic !== this.props.topic) {
+      this.setState({isLoading: true});
       this.getArticlesByTopic();
     }
   }

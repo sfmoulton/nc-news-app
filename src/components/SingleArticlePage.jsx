@@ -3,7 +3,6 @@ import styles from "../css-styles/SingleArticlePage.module.css";
 import LoadingIndicator from "./LoadingIndicator";
 import { Link } from "@reach/router";
 import Axios from "axios";
-import ArticleCommentsPage from "./ArticleCommentsPage";
 import ErrorPage from "./ErrorPage";
 
 class SingleArticlePage extends Component {
@@ -44,7 +43,9 @@ class SingleArticlePage extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.uri !== this.props.uri) {
+      this.setState({ isLoading: true })
       this.getArticleInfo();
+     
     }
   }
 
