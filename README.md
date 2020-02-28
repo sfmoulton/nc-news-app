@@ -1,68 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NC-News Project (Front-End)
 
-## Available Scripts
+The **NC-News App** has been created to allow users to read articles, add their comments, vote (either positively or negatively!) for a comment or article, and search for articles based on their favourite subject.
 
-In the project directory, you can run:
+The app has been designed with UX front of mind - with clear text, display and buttons allowing the user to interact easily with the content. 
 
-### `npm start`
+Prior to the creation of the Front-End App, the API Back-End was hosted using **Heroku**, which has been utilised by the app. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For further details on this, please follow this link: https://github.com/sfmoulton/be-nc-news
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+But first things first, take a look at the app! Here is a link to the deployed site: LINK TO DEPLOYED VERSION 
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The following instructions will allow you to set up your own version of the NC News App:
 
-### `npm run build`
+## Cloning the project
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone this repo:
+```js
+git clone https://github.com/sfmoulton/nc-news-app.git
+```
+Then don't forget to hook your local version up to a new GitHub repo, using the below terminal commands (checking the git remotes with each step: git remote -v):
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```js
+git remote remove origin
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+git remote add origin <YOUR-GITHUB-URL>
+```
+Or if you would like to suggest any project changes, please feel free to collaborate and your own push requests to my repo.
 
-### `npm run eject`
+Then run the below to install the dependencies and start the app in the browser:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```js
+npm install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm start
+```
+## Creating the app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**NC News** has been created using React -  further details of which can be found here: https://reactjs.org/
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Project Dependencies
 
-## Learn More
+The following dependencies were required to build the NC-News app:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- #### Node JS (Version 13.1.0)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- #### Reach Router (https://reach.tech/router)
+Reach Router is allowed me to implement a Router and Links in to the app componenets.
 
-### Code Splitting
+- #### Axios (https://github.com/axios/axios) 
+Axios was used to make HTTP requests to the NC-News Back-End API.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- #### Moment (https://www.npmjs.com/package/react-moment)
+Moment (a React component) was used to format dates in the app.
 
-### Analyzing the Bundle Size
+- #### React Icons (https://react-icons.netlify.com/#/)
+Used to add icons to the app.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- #### React-Loader-Spinner (https://www.npmjs.com/package/react-loader-spinner)
+This package provided a simple component that I used to indicate to the user when the page was loading.
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### If you have any questions regarding the project, please get in touch!
