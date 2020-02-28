@@ -14,10 +14,9 @@ class AddVote extends Component {
 
   updateVotes = voteChange => {
     const { article_id, comment_id } = this.props;
-    const { isLoading } = this.state;
 
     if (comment_id === undefined) {
-      this.setState({isLoading: true});
+      this.setState({ isLoading: true });
       api.patchArticleVotes(article_id, voteChange).catch(err => {
         this.setState({ err: err });
       });
@@ -66,7 +65,7 @@ class AddVote extends Component {
             {"➖"}
           </span>
         </button>
-        {(isLoading) && <LoadingIndicator />}
+        {isLoading && <LoadingIndicator />}
         {err && <ErrorPage err={err} />}
       </div>
     );

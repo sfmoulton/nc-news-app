@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Axios from "axios"
 import styles from "../css-styles/RemoveUserComments.module.css";
 
 class RemoveUserComments extends Component {

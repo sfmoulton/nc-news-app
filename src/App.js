@@ -12,17 +12,14 @@ import HeaderBar from "./components/HeaderBar";
 
 class App extends Component {
   state = {
-    username: "jessjelly",
-    defaultErr: {
-      defaultMsg: "Invalid URL",
-      defaultStatus: 404
-    }
+    username: "jessjelly"
   };
   render() {
-    const { username, defaultErr } = this.state;
+    const { username } = this.state;
+
     return (
       <main>
-        <HeaderBar username={username}/>
+        <HeaderBar username={username} />
         <div className={styles.navBarContainer}>
           <TopicsNavBar />
         </div>
@@ -34,7 +31,7 @@ class App extends Component {
             path="/articles/:article_id/comments"
             username={username}
           />
-          <ErrorPage default defaultErr={defaultErr} />
+          <ErrorPage default />
         </Router>
       </main>
     );
