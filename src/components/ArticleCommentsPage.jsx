@@ -54,16 +54,6 @@ class ArticleCommentsPage extends Component {
     this.getArticleTitle();
   }
 
-  postNewArticleComment = requestBody => {
-    const { article_id } = this.props;
-
-    return Axios.post(
-      `https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}/comments`,
-      requestBody
-    ).then(({ data }) => {
-      return data.comment;
-    });
-  };
 
   addCommentToList = newComment => {
     this.setState(state => {
@@ -78,12 +68,13 @@ class ArticleCommentsPage extends Component {
   };
 
   removeCommentFromState = comment_id => {
+    this.setState({isLoading: true})
     const { comments } = this.state;
     this.deleteComment(comment_id).then(() => {
       const filteredComments = comments.filter(comment => {
         return comment.comment_id !== comment_id;
       });
-      this.setState({ comments: filteredComments });
+      this.setState({ comments: filteredComments, isLoading: false });
     });
   };
 

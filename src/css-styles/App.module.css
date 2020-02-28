@@ -8,12 +8,3 @@
   background-color: #56A3A6;
 }
 
-.pageHeaderContainer {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  width: 100%;
-  grid-template-areas: 
-    "1 2 3"
-    "4 5 6";
-  background-color: #084C61;
-}

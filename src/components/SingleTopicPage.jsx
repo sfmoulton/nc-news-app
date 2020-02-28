@@ -34,8 +34,8 @@ class SingleTopicPage extends Component {
   };
 
   componentDidUpdate(prevProps) {
-    if (prevProps.topic !== this.props.topic) {
-      this.setState({isLoading: true});
+    if (prevProps.topic !== this.props.topic ) {
+      this.setState({isLoading: true, err: null});
       this.getArticlesByTopic();
     }
   }

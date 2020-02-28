@@ -1,11 +1,23 @@
 import React, { Component } from "react";
 import styles from "../css-styles/AddArticleComment.module.css";
 import LoadingIndicator from "./LoadingIndicator";
+import Axios from "axios";
 
 class AddArticleComment extends Component {
   state = {
     body: "",
     isLoading: null
+  };
+
+  postNewArticleComment = requestBody => {
+    const { article_id } = this.props;
+
+    return Axios.post(
+      `https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}/comments`,
+      requestBody
+    ).then(({ data }) => {
+      return data.comment;
+    });
   };
 
   handleChange = (value, key) => {
@@ -15,12 +27,12 @@ class AddArticleComment extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { body } = this.state;
-    const { postNewArticleComment, username, addCommentToList } = this.props;
+    const { username, addCommentToList } = this.props;
     const requestBody = { username, body };
 
     this.setState({ isLoading: true });
 
-    postNewArticleComment(requestBody).then(newComment => {
+    this.postNewArticleComment(requestBody).then(newComment => {
       addCommentToList(newComment);
       this.setState({ body: "", isLoading: false });
     });

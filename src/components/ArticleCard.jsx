@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 import AddVote from "./AddVote";
 import Moment from "react-moment";
 
-const ArticleCard = ({ article, addArticleVote }) => {
+const ArticleCard = ({ article }) => {
   const {
     article_id,
     title,
