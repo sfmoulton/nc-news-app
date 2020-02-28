@@ -5,4 +5,9 @@
   flex-wrap: wrap;
 }
 
-
+.topicName {
+  color: #084c61;
+  font-size: 4vh;
+  text-align: center;
+  font-family: "Quicksand";
+}

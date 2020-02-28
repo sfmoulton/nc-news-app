@@ -44,6 +44,7 @@ class SingleTopicPage extends Component {
   }
 
   render() {
+    const { topic } = this.props;
     const { articles, isLoading, err } = this.state;
 
     if (err) return <ErrorPage err={err} />;
@@ -52,9 +53,12 @@ class SingleTopicPage extends Component {
       return <LoadingIndicator LoadingIndicator={LoadingIndicator} />;
 
     return (
+      <div className={styles.topicName}><h2>{topic.toUpperCase()}</h2>
       <div className={styles.articlesList}>
         <ArticlesList articles={articles} />
       </div>
+      </div>
+      
     );
   }
 }

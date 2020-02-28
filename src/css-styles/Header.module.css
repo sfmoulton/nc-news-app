@@ -14,7 +14,7 @@
   /* height: 13vh; */
   background-color: #084C61;
   width: 100%;
-  margin-bottom: 2pt;
+  margin-bottom: 3vh;
 }
 
 .h1 {
@@ -23,6 +23,7 @@
  font-size: 6vh;
  align-self: center;
  font-family: "Bungee Shade";
+ letter-spacing: 0.1vh;
 }
 
 .h2 {
@@ -31,7 +32,7 @@
   margin: 0.7vh;
   color: white;
   font-size: 3vh;
-  font-family: 'Quicksand';
+  font-family: 'Zilla Slab Highlight';
   font-weight: 500;
 }
 
