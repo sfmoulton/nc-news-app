@@ -1,21 +1,20 @@
 .h2 {
   font-size: 6.5vh;
-  color: #DB504A;
+  color: #db504a;
   text-align: center;
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
 }
 
 .h3 {
   font-size: 4vh;
-  color:#DB504A;
+  color: #db504a;
   text-align: center;
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
 }
 
 .p {
   font-size: 2vh;
-  color: #DB504A;
+  color: #db504a;
   text-align: center;
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
 }
-

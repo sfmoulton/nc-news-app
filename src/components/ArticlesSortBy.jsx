@@ -23,8 +23,12 @@ class ArticlesSortBy extends Component {
       <div className={styles.formContainer}>
         <form onSubmit={this.handleSubmit} className={styles.form}>
           <label className={styles.formLabel}>
-            Sort by: 
-            <select className={styles.dropDown} id="sort_by" onChange={this.handleChange}>
+            Sort by:
+            <select
+              className={styles.dropDown}
+              id="sort_by"
+              onChange={this.handleChange}
+            >
               <option value="created_at">Most Recently Published</option>
               <option value="comment_count">Highest Comment Count</option>
               <option value="votes">Highest Reader Votes</option>

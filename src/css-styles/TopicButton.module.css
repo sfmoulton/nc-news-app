@@ -1,16 +1,10 @@
 .topicButton {
-  /* background: rgb(28, 184, 65);
-   padding: 2vh;
-   font-size: 2vh;
-   height: 10vh;
-   width: 100%;
-   margin: 10px;  */
-  color: #084C61 !important;
+  color: #084c61 !important;
   text-transform: uppercase;
   text-decoration: none;
   background: #ffffff;
   padding: 2vh;
-  border: 4px solid #084C61 !important;
+  border: 4px solid #084c61 !important;
   display: inline-block;
   transition: all 0.4s ease 0s;
   font-size: 2vh;
@@ -21,8 +15,8 @@
 
 .topicButton:hover {
   color: #ffffff !important;
-  background: #E3B505;
-  border-color: #E3B505 !important;
+  background: #e3b505;
+  border-color: #e3b505 !important;
   transition: all 0.4s ease 0s;
   font-size: 2vh;
   font-weight: 600;

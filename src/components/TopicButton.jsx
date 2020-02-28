@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import styles from "../css-styles/TopicButton.module.css"
+import styles from "../css-styles/TopicButton.module.css";
 
 const TopicButton = ({ topic }) => {
   return (

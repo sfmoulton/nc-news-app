@@ -34,20 +34,20 @@ class HomePage extends Component {
   render() {
     const { articles, isLoading, err } = this.state;
 
-    if (err) return <ErrorPage err={err}/>;
+    if (err) return <ErrorPage err={err} />;
 
     if (isLoading)
       return <LoadingIndicator LoadingIndicator={LoadingIndicator} />;
 
     return (
       <>
-      <ArticlesSortBy getArticles={this.getArticles} />
-      <div className={styles.articlesList}>
-        <ArticlesList
-          articles={articles}
-          addArticleVote={this.addArticleVote}
-        />
-      </div>
+        <ArticlesSortBy getArticles={this.getArticles} />
+        <div className={styles.articlesList}>
+          <ArticlesList
+            articles={articles}
+            addArticleVote={this.addArticleVote}
+          />
+        </div>
       </>
     );
   }

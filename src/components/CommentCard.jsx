@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../css-styles/CommentCard.module.css";
 import RemoveUserComments from "./RemoveUserComments";
 import AddVote from "./AddVote";
-import Moment from "react-moment"
+import Moment from "react-moment";
 
 const CommentCard = ({
   comments,

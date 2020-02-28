@@ -43,9 +43,8 @@ class SingleArticlePage extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.uri !== this.props.uri) {
-      this.setState({ isLoading: true })
+      this.setState({ isLoading: true });
       this.getArticleInfo();
-     
     }
   }
 
@@ -61,7 +60,9 @@ class SingleArticlePage extends Component {
     return (
       <div className={styles.articleContainer}>
         <h2 className={styles.articleTitle}>{title}</h2>
-        <h3 className={styles.articleAuthor}><b>Published By: </b> {author}</h3>
+        <h3 className={styles.articleAuthor}>
+          <b>Published By: </b> {author}
+        </h3>
         <div className={styles.bodyContainer}>
           <p className={styles.body}>{body}</p>
         </div>
@@ -74,7 +75,5 @@ class SingleArticlePage extends Component {
     );
   }
 }
-
-// maybe look to add the comments in to here?
 
 export default SingleArticlePage;

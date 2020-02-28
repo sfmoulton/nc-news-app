@@ -1,30 +1,30 @@
- .formContainer {
-	display: flex;
-	flex-direction: column;
+.formContainer {
+  display: flex;
+  flex-direction: column;
   padding: 2vh;
-	margin: auto;
+  margin: auto;
 }
 
 .dropDown {
-	font-family: 'Quicksand';
-	font-size: 2vh;
-	margin: 0 1vh 0 1vh;
-	background: white;
-	color: #084C61;
-	padding: 1vh;
-	box-shadow: 1px 1px 8px #330033;
+  font-family: "Quicksand";
+  font-size: 2vh;
+  margin: 0 1vh 0 1vh;
+  background: white;
+  color: #084c61;
+  padding: 1vh;
+  box-shadow: 1px 1px 8px #330033;
 }
 
 .formLabel {
-	font-family: 'Quicksand';
+  font-family: "Quicksand";
 }
 
 .goButton {
-	font-family: 'Quicksand';
-	background-color: #E3B505;
-	font-size: 2vh;
-	padding: 1vh;
-	color: white;
+  font-family: "Quicksand";
+  background-color: #e3b505;
+  font-size: 2vh;
+  padding: 1vh;
+  color: white;
 }
 
 /* @media only screen and (max-width: 600px) {

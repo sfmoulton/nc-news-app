@@ -1,25 +1,25 @@
 .commentContainer {
   text-align: center;
   align-self: center;
-  background-color: #4F6D7A;
+  background-color: #4f6d7a;
   margin: 3vh 0 3vh 0;
-  width: 80%
+  width: 80%;
 }
 
 .h2 {
   color: white;
-  font-family: 'Zilla Slab Highlight';
+  font-family: "Zilla Slab Highlight";
   font-size: 3vh;
 }
 
 .p1 {
   color: white;
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
 }
 
 .body {
   color: white;
   padding: 3vh;
   text-align: center;
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
 }

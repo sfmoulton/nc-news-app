@@ -34,8 +34,8 @@ class SingleTopicPage extends Component {
   };
 
   componentDidUpdate(prevProps) {
-    if (prevProps.topic !== this.props.topic ) {
-      this.setState({isLoading: true, err: null});
+    if (prevProps.topic !== this.props.topic) {
+      this.setState({ isLoading: true, err: null });
       this.getArticlesByTopic();
     }
   }
@@ -54,12 +54,12 @@ class SingleTopicPage extends Component {
       return <LoadingIndicator LoadingIndicator={LoadingIndicator} />;
 
     return (
-      <div className={styles.topicName}><h2>{topic.toUpperCase()}</h2>
-      <div className={styles.articlesList}>
-        <ArticlesList articles={articles} />
+      <div className={styles.topicName}>
+        <h2>{topic.toUpperCase()}</h2>
+        <div className={styles.articlesList}>
+          <ArticlesList articles={articles} />
+        </div>
       </div>
-      </div>
-      
     );
   }
 }

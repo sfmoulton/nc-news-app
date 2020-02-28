@@ -1,29 +1,32 @@
 @font-face {
-  font-family: 'Bungee Shade';
+  font-family: "Bungee Shade";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Bungee Shade'), local('BungeeShade-Regular'), url(https://fonts.gstatic.com/s/bungeeshade/v5/DtVkJxarWL0t2KdzK3oI_jkc6SjT.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: local("Bungee Shade"), local("BungeeShade-Regular"),
+    url(https://fonts.gstatic.com/s/bungeeshade/v5/DtVkJxarWL0t2KdzK3oI_jkc6SjT.woff2)
+      format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   align-content: space-around;
-  /* height: 13vh; */
-  background-color: #084C61;
+  background-color: #084c61;
   width: 100%;
   margin-bottom: 3vh;
 }
 
 .h1 {
- color: white;
- order: 1;
- font-size: 6vh;
- align-self: center;
- font-family: "Bungee Shade";
- letter-spacing: 0.1vh;
+  color: white;
+  order: 1;
+  font-size: 5.6vh;
+  align-self: center;
+  font-family: "Bungee Shade";
+  letter-spacing: 0.1vh;
 }
 
 .h2 {
@@ -31,8 +34,7 @@
   align-self: center;
   margin: 0.7vh;
   color: white;
-  font-size: 3vh;
-  font-family: 'Zilla Slab Highlight';
+  font-size: 2.7vh;
+  font-family: "Zilla Slab Highlight";
   font-weight: 500;
 }
-

@@ -54,7 +54,6 @@ class ArticleCommentsPage extends Component {
     this.getArticleTitle();
   }
 
-
   addCommentToList = newComment => {
     this.setState(state => {
       return { comments: [newComment, ...state.comments] };
@@ -68,7 +67,7 @@ class ArticleCommentsPage extends Component {
   };
 
   removeCommentFromState = comment_id => {
-    this.setState({isLoading: true})
+    this.setState({ isLoading: true });
     const { comments } = this.state;
     this.deleteComment(comment_id).then(() => {
       const filteredComments = comments.filter(comment => {

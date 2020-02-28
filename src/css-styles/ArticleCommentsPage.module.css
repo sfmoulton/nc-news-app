@@ -8,7 +8,7 @@
   color: #084c61;
   font-size: 4vh;
   text-align: center;
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
 }
 
 .buttonSurround {
@@ -28,7 +28,7 @@
   width: 30vh;
   margin: 2vh;
   align-self: center;
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
 }
 
 .articleButton:hover {
@@ -49,11 +49,11 @@
 
 @media only screen and (max-width: 950px) {
   .buttonContainer {
-  display: flex;
-  width: 50%;
-  height: 20%;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  margin: auto;
-}
+    display: flex;
+    width: 50%;
+    height: 20%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: auto;
+  }
 }

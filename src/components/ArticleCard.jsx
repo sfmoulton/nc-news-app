@@ -17,9 +17,7 @@ const ArticleCard = ({ article }) => {
   return (
     <div key={article_id} className={styles.articleContainer}>
       <h2 className={styles.articleTitle}>{title}</h2>
-      <p className={styles.p1}>
-        By {author}
-      </p>
+      <p className={styles.p1}>By {author}</p>
       <p className={styles.p2}>
         <b>Published: </b>
         <Moment fromNow>{created_at}</Moment>

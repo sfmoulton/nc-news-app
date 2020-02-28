@@ -8,11 +8,11 @@ class TopicsNavBar extends Component {
   };
 
   getAllTopics = () => {
-    Axios
-      .get("https://steph-nc-news-app.herokuapp.com/api/topics")
-      .then(response => {
+    Axios.get("https://steph-nc-news-app.herokuapp.com/api/topics").then(
+      response => {
         this.setState({ topics: response.data.topics });
-      });
+      }
+    );
   };
 
   componentDidMount() {
