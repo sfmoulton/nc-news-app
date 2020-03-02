@@ -7,7 +7,7 @@
 
 .dropDown {
   font-family: "Quicksand";
-  font-size: 2vh;
+  font-size: 2.3vh;
   margin: 0 1vh 0 1vh;
   background: white;
   color: #084c61;
@@ -17,6 +17,8 @@
 
 .formLabel {
   font-family: "Quicksand";
+  color: #330033;
+  font-size: 2vh;
 }
 
 .goButton {
@@ -27,8 +29,4 @@
   color: white;
 }
 
-/* @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-} */
+

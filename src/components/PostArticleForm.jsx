@@ -4,12 +4,13 @@ import LoadingIndicator from "./LoadingIndicator";
 import TopicDropDown from "./TopicDropDown";
 import ErrorPage from "./ErrorPage";
 import { Link } from "@reach/router";
+import styles from "../css-styles/PostArticleForm.module.css";
 
 class PostArticleForm extends Component {
   state = {
     isLoading: true,
     topics: [],
-    topic: "",
+    topic: "coding",
     title: "",
     body: "",
     err: null,
@@ -23,7 +24,7 @@ class PostArticleForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const { title, body, topic } = this.state;
+    const { title, topic, body } = this.state;
     const { username } = this.props;
     const requestBody = { title, topic, username, body };
 
@@ -37,18 +38,28 @@ class PostArticleForm extends Component {
           isLoading: false,
           title: "",
           body: "",
-          postSuccess: true
+          postSuccess: true,
+          err: null
         });
       })
       .catch(err => {
-        this.setState({ err });
+        this.setState({
+          err: {
+            msg: err.response.data.msg,
+            status: err.response.status
+          }
+        });
       });
   };
 
   getAllTopics = () => {
     Axios.get("https://steph-nc-news-app.herokuapp.com/api/topics").then(
       response => {
-        this.setState({ isLoading: false, topics: response.data.topics });
+        this.setState({
+          isLoading: false,
+          topics: response.data.topics,
+          err: null
+        });
       }
     );
   };
@@ -59,6 +70,7 @@ class PostArticleForm extends Component {
 
   render() {
     const { isLoading, topics, err, postSuccess } = this.state;
+    const { username } = this.props;
     const topicSlugs = topics.map(topic => topic.slug);
 
     if (err) return <ErrorPage err={err} />;
@@ -67,10 +79,11 @@ class PostArticleForm extends Component {
       return <LoadingIndicator LoadingIndicator={LoadingIndicator} />;
 
     return !postSuccess ? (
-      <form onSubmit={this.handleSubmit}>
-        <label>
+      <form onSubmit={this.handleSubmit} className={styles.postContainer}>
+        <label className={styles.titleLabel}>
           Title
           <input
+            className={styles.titleInputBox}
             required
             type="text"
             id="title"
@@ -78,29 +91,36 @@ class PostArticleForm extends Component {
             onChange={this.handleChange}
           ></input>
         </label>
-        <label>
+        <label className={styles.topicLabel}>
           Topic
-          <select id="topic" onChange={this.handleChange}>
+          <select
+            className={styles.dropDown}
+            id="topic"
+            onChange={this.handleChange}
+          >
             <TopicDropDown topicSlugs={topicSlugs} />
           </select>
         </label>
-        <label>
+        <label className={styles.articleLabel}>
           Article
-          <input
+          <textarea
+            className={styles.articleInputBox}
             required
             type="text"
             id="body"
             value={this.state.body}
             onChange={this.handleChange}
-          ></input>
+          ></textarea>
         </label>
-        <button>Post!</button>
+        <button className={styles.postButton}>Post!</button>
       </form>
     ) : (
-      <div>
-        <p>Article posted!</p>
+      <div className={styles.postContainer}>
+        <p className={styles.articlePostedMsg}>
+          Thanks for posting, {username}!
+        </p>
         <Link to="/">
-          <button>Back to all articles</button>
+          <button className={styles.postButton}>Back to all articles</button>
         </Link>
       </div>
     );

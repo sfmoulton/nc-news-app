@@ -5,4 +5,5 @@
   flex-direction: row;
   justify-content: space-around;
   background-color: #56a3a6;
+  flex-wrap: wrap;
 }

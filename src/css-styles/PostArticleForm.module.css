@@ -1,0 +1,94 @@
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+
+.titleLabel {
+  color: #084c61;
+  align-self: center;
+  font-family: Quicksand;
+  font-weight: 600;
+  font-size: 3vh;
+}
+
+.titleInputBox {
+  border: 5px solid #56a3a6;
+  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1),
+    0 0 16px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 8px #330033;
+  padding: 2vh;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 0 10px 0;
+  font-family: "Quicksand";
+  width: 47vh;
+  height: cscdxvvh;
+  word-wrap: break-word;
+  color: #084c61;
+}
+
+.postButton {
+  color: #084c61 !important;
+  text-transform: uppercase;
+  background: #ffffff;
+  padding: 20px;
+  border: 4px solid #084c61 !important;
+  border-radius: 6px;
+  display: inline;
+  transition: all 0.3s ease 0s;
+  font-size: 1.75vh;
+  font-family: "Quicksand";
+  align-self: center;
+}
+
+.articleLabel {
+  color: #084c61;
+  align-self: center;
+  font-family: Quicksand;
+  font-weight: 600;
+  font-size: 3vh; 
+  /* padding: 0 3vh 0 0; */
+}
+
+.articleInputBox {
+  border: 5px solid #56a3a6;
+  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1),
+    0 0 16px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 8px #330033;
+  padding: 2vh;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 0 10px 0;
+  font-family: "Quicksand";
+  width: 47vh;
+  height: 15vh;
+  color: #084c61;
+}
+
+.topicLabel {
+  color: #084c61;
+  align-self: center;
+  font-family: Quicksand;
+  font-weight: 600;
+
+}
+
+.dropDown {
+  font-family: "Quicksand";
+  font-size: 1.8vh;
+  margin: 3vh 0 3vh 0;
+  background: white;
+  color: #084c61;
+  padding: 1vh;
+  box-shadow: 1px 1px 8px #330033;
+}
+
+.articlePostedMsg {
+  color: #084c61;
+  align-self: center;
+  font-family: Quicksand;
+  font-weight: 600;
+  font-size: 2.75vh;
+}
