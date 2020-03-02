@@ -1,13 +1,13 @@
 .formContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 2vh;
   margin: auto;
 }
 
 .dropDown {
   font-family: "Quicksand";
-  font-size: 2.3vh;
+  font-size: 1.8vh;
   margin: 0 1vh 0 1vh;
   background: white;
   color: #084c61;
@@ -18,7 +18,8 @@
 .formLabel {
   font-family: "Quicksand";
   color: #330033;
-  font-size: 2vh;
+  font-size: 1.9vh;
+
 }
 
 .goButton {
@@ -28,5 +29,7 @@
   padding: 1vh;
   color: white;
 }
+
+
 
 

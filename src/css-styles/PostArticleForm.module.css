@@ -1,16 +1,23 @@
 .postContainer {
   display: flex;
   flex-direction: column;
-  text-align: center;
   margin: auto;
+  text-align: center;
 }
 
-.titleLabel {
+.title {
   color: #084c61;
   align-self: center;
   font-family: Quicksand;
   font-weight: 600;
-  font-size: 3vh;
+  font-size: 2.5vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleLabel {
+  align-self: center;
+  padding: 1vh;
 }
 
 .titleInputBox {
@@ -43,13 +50,19 @@
   align-self: center;
 }
 
-.articleLabel {
+.article {
   color: #084c61;
   align-self: center;
   font-family: Quicksand;
   font-weight: 600;
-  font-size: 3vh; 
-  /* padding: 0 3vh 0 0; */
+  font-size: 2.5vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.articleLabel {
+  align-self: center;
+  padding: 1vh;
 }
 
 .articleInputBox {
@@ -67,12 +80,19 @@
   color: #084c61;
 }
 
-.topicLabel {
+.topic {
   color: #084c61;
   align-self: center;
   font-family: Quicksand;
   font-weight: 600;
+  font-size: 2.5vh;
+  display: flex;
+  flex-direction: column;
+}
 
+.topicLabel {
+  align-self: center;
+  padding: 1vh;
 }
 
 .dropDown {
@@ -92,3 +112,11 @@
   font-weight: 600;
   font-size: 2.75vh;
 }
+
+.pageTitle {
+  color: #084c61;
+  font-size: 4vh;
+  text-align: center;
+  font-family: "Quicksand";
+}
+

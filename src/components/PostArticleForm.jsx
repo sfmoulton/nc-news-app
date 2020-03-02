@@ -79,9 +79,11 @@ class PostArticleForm extends Component {
       return <LoadingIndicator LoadingIndicator={LoadingIndicator} />;
 
     return !postSuccess ? (
+      <div>
+      <h2 className={styles.pageTitle}>Post New Article</h2>
       <form onSubmit={this.handleSubmit} className={styles.postContainer}>
-        <label className={styles.titleLabel}>
-          Title
+        <label className={styles.title}>
+          <div className={styles.titleLabel}>Title</div>
           <input
             className={styles.titleInputBox}
             required
@@ -91,8 +93,8 @@ class PostArticleForm extends Component {
             onChange={this.handleChange}
           ></input>
         </label>
-        <label className={styles.topicLabel}>
-          Topic
+        <label className={styles.topic}>
+          <div className={styles.topicLabel}>Topic</div>
           <select
             className={styles.dropDown}
             id="topic"
@@ -101,8 +103,8 @@ class PostArticleForm extends Component {
             <TopicDropDown topicSlugs={topicSlugs} />
           </select>
         </label>
-        <label className={styles.articleLabel}>
-          Article
+        <label className={styles.article}>
+          <div className={styles.articleLabel}>Article</div>
           <textarea
             className={styles.articleInputBox}
             required
@@ -114,8 +116,10 @@ class PostArticleForm extends Component {
         </label>
         <button className={styles.postButton}>Post!</button>
       </form>
+      </div>
     ) : (
       <div className={styles.postContainer}>
+          <h2 className={styles.pageTitle}>New Article Posted</h2>
         <p className={styles.articlePostedMsg}>
           Thanks for posting, {username}!
         </p>
