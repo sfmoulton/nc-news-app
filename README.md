@@ -8,9 +8,17 @@ Prior to the creation of the Front-End App, the API Back-End was hosted using **
 
 For further details on this, please follow this link: https://github.com/sfmoulton/be-nc-news
 
-But first things first, take a look at the app! Here is a link to the deployed site: LINK TO DEPLOYED VERSION 
+But first things first, take a look at the app! Here is a link to the deployed site: https://sfm-nc-news-app.netlify.com
 
-## Getting Started
+## The App
+
+As mentioned, the app itself was designed to allow the user to easily read posted articles, post their own articles, and comment on any posts. The user is also able to vote for a comment or article, using the provided buttons.
+
+The logged in user can also delete any comments or articles they have posted, and a delete button will accompany any of their posts.
+
+Functionality has also been incorporated to allow the user to log in to the app - however due to the Back End API this username must match a username that exists in the database. If you would like to log in as a user other than the famous 'jessjelly', please try 'grumpy19'.
+
+I chose not to add in the option to use a password - as this is a prototype app that I wanted to make easily accessible, without having to store any sensitive data.
 
 The following instructions will allow you to set up your own version of the NC News App:
 
