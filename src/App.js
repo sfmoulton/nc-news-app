@@ -9,6 +9,9 @@ import ArticleCommentsPage from "./components/ArticleCommentsPage";
 import styles from "./css-styles/App.module.css";
 import ErrorPage from "./components/ErrorPage";
 import HeaderBar from "./components/HeaderBar";
+import LogInForm from "./components/LogInForm";
+import PostArticleButton from "./components/PostArticleButton";
+import PostArticleForm from "./components/PostArticleForm";
 
 class App extends Component {
   state = {
@@ -22,6 +25,7 @@ class App extends Component {
         <HeaderBar username={username} />
         <div className={styles.navBarContainer}>
           <TopicsNavBar />
+          <PostArticleButton />
         </div>
         <Router>
           <HomePage path="/" />
@@ -31,6 +35,8 @@ class App extends Component {
             path="/articles/:article_id/comments"
             username={username}
           />
+          <LogInForm path="/log_in" />
+          <PostArticleForm path="/post_article" username={username}/>
           <ErrorPage default />
         </Router>
       </main>
