@@ -5,7 +5,7 @@ import styles from "../css-styles/LogInButton.module.css"
 const LogInButton = () => {
   return <Link to="/log_in">
     <button className={styles.logInButton}>
-      Log In
+      Change User
     </button>
   </Link>;
 };
