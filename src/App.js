@@ -28,7 +28,7 @@ class App extends Component {
           <PostArticleButton />
         </div>
         <Router>
-          <HomePage path="/" />
+          <HomePage path="/" username={username} />
           <SingleTopicPage path="/topics/:topic" />
           <SingleArticlePage path="/articles/:article_id" />
           <ArticleCommentsPage
@@ -36,7 +36,7 @@ class App extends Component {
             username={username}
           />
           <LogInForm path="/log_in" />
-          <PostArticleForm path="/post_article" username={username}/>
+          <PostArticleForm path="/post_article" username={username} />
           <ErrorPage default />
         </Router>
       </main>

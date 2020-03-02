@@ -3,8 +3,9 @@ import styles from "../css-styles/ArticleCard.module.css";
 import { Link } from "@reach/router";
 import AddVote from "./AddVote";
 import Moment from "react-moment";
+import RemoveUserArticles from "./RemoveUserArticles";
 
-const ArticleCard = ({ article }) => {
+const ArticleCard = ({ article, username, removeArticleFromState }) => {
   const {
     article_id,
     title,
@@ -13,6 +14,8 @@ const ArticleCard = ({ article }) => {
     votes,
     comment_count
   } = article;
+
+
 
   return (
     <div key={article_id} className={styles.articleContainer}>
@@ -32,6 +35,7 @@ const ArticleCard = ({ article }) => {
         </Link>
       </div>
       <AddVote article_id={article_id} votes={votes} />
+      {username === author && <RemoveUserArticles article_id={article_id}  removeArticleFromState={removeArticleFromState}/>}
     </div>
   );
 };

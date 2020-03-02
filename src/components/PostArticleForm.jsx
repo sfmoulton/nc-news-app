@@ -71,6 +71,7 @@ class PostArticleForm extends Component {
         <label>
           Title
           <input
+            required
             type="text"
             id="title"
             value={this.state.title}
@@ -86,6 +87,7 @@ class PostArticleForm extends Component {
         <label>
           Article
           <input
+            required
             type="text"
             id="body"
             value={this.state.body}

@@ -27,12 +27,30 @@ class HomePage extends Component {
       });
   };
 
+  deleteArticle = article_id => {
+    return Axios.delete(
+      `https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}`
+    );
+  };
+
+  removeArticleFromState = article_id => {
+    this.setState({ isLoading: true });
+    const { articles } = this.state;
+    this.deleteArticle(article_id).then(() => {
+      const filteredArticles = articles.filter(article => {
+        return article.article_id !== article_id;
+      });
+      this.setState({ articles: filteredArticles, isLoading: false });
+    });
+  };
+
   componentDidMount() {
     this.getArticles();
   }
 
   render() {
     const { articles, isLoading, err } = this.state;
+    const { username } = this.props;
 
     if (err) return <ErrorPage err={err} />;
 
@@ -46,6 +64,9 @@ class HomePage extends Component {
           <ArticlesList
             articles={articles}
             addArticleVote={this.addArticleVote}
+            username={username}
+            deleteArticle={this.deleteArticle}
+            removeArticleFromState={this.removeArticleFromState}
           />
         </div>
       </>

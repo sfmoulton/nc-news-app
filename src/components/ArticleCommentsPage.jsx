@@ -46,7 +46,14 @@ class ArticleCommentsPage extends Component {
       this.setState({
         articleTitle: response.data.article.title
       });
-    });
+    }).catch(err => {
+      this.setState({
+        err: {
+          msg: err.response.data.msg,
+          status: err.response.status
+        }
+      });
+    });;
   };
 
   componentDidMount() {
@@ -63,7 +70,14 @@ class ArticleCommentsPage extends Component {
   deleteComment = comment_id => {
     return Axios.delete(
       `https://steph-nc-news-app.herokuapp.com/api/comments/${comment_id}`
-    );
+    ).catch(err => {
+      this.setState({
+        err: {
+          msg: err.response.data.msg,
+          status: err.response.status
+        }
+      });
+    });;
   };
 
   removeCommentFromState = comment_id => {
