@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../css-styles/UserDetailsHeader.module.css";
 import Moment from "react-moment";
-// import LogInButton from "./LogInButton";
+import LogInButton from "./LogInButton";
 
 const UserDetailsHeader = ({ username }) => {
   const currentDate = new Date();
@@ -20,7 +20,7 @@ const UserDetailsHeader = ({ username }) => {
           {currentDate}
         </Moment>
       </p>
-      {/* <LogInButton /> */}
+      <LogInButton />
     </div>
   );
 };

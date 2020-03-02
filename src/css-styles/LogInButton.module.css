@@ -1,0 +1,10 @@
+.logInButton {
+  font-family: "Quicksand";
+  background-color: #e3b505;
+  font-size: 1.7vh;
+  padding: 1vh;
+  color: white;
+  margin-right: 3.5vh;
+  margin-bottom: 1vh;
+  text-align: right;
+}

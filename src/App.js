@@ -17,6 +17,11 @@ class App extends Component {
   state = {
     username: "jessjelly"
   };
+
+  changeLoggedInUser = newUser => {
+    this.setState({ username: newUser });
+  };
+
   render() {
     const { username } = this.state;
 
@@ -35,7 +40,7 @@ class App extends Component {
             path="/articles/:article_id/comments"
             username={username}
           />
-          <LogInForm path="/log_in" />
+          <LogInForm path="/log_in" changeLoggedInUser={this.changeLoggedInUser}/>
           <PostArticleForm path="/post_article" username={username} />
           <ErrorPage default />
         </Router>
