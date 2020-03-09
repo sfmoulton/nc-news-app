@@ -30,4 +30,13 @@ export const removeComment = comment_id => {
   return Axios.delete(
     `https://steph-nc-news-app.herokuapp.com/api/comments/${comment_id}`
   );
-}
+};
+
+export const fetchArticlesByTopic = topic => {
+  return Axios.get("https://steph-nc-news-app.herokuapp.com/api/articles", {
+    params: {
+      topic
+    }
+  });
+};
+

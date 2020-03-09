@@ -5,6 +5,7 @@ import ArticlesList from "./ArticlesList";
 import ArticlesSortBy from "./ArticlesSortBy";
 import Axios from "axios";
 import ErrorPage from "./ErrorPage";
+import * as api from "../api";
 
 class HomePage extends Component {
   state = {
@@ -23,6 +24,7 @@ class HomePage extends Component {
         this.setState({ articles: response.data.articles, isLoading: false });
       })
       .catch(err => {
+        console.dir(err);
         this.setState({ err });
       });
   };
