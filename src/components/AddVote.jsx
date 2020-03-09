@@ -8,7 +8,8 @@ class AddVote extends Component {
   state = {
     voteChange: 0,
     err: null,
-    hasVoted: false,
+    // hasVotedUp: false,
+    // hasVotedDown: false,
     isLoading: null
   };
 
@@ -23,7 +24,7 @@ class AddVote extends Component {
       this.setState(currentState => {
         return {
           voteChange: currentState.voteChange + voteChange,
-          hasVoted: true,
+          // hasVoted: true,
           isLoading: false
         };
       });
@@ -58,7 +59,7 @@ class AddVote extends Component {
         <p className={styles.votes}>Current votes: {votes + voteChange}</p>
         <button
           className={styles.voteButton}
-          disabled={hasVoted}
+          // disabled={hasVoted}
           onClick={() => this.updateVotes(-1)}
         >
           <span role="img" label="minus">

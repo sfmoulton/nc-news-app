@@ -3,9 +3,9 @@ import LoadingIndicator from "./LoadingIndicator";
 import CommentCard from "./CommentCard";
 import AddArticleComment from "./AddArticleComment";
 import styles from "../css-styles/ArticleCommentsPage.module.css";
-import Axios from "axios";
 import ErrorPage from "./ErrorPage";
 import { Link } from "@reach/router";
+import * as api from "../api";
 
 class ArticleCommentsPage extends Component {
   state = {
@@ -17,10 +17,8 @@ class ArticleCommentsPage extends Component {
 
   getArticleComments = () => {
     const { article_id } = this.props;
-
-    Axios.get(
-      `https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}/comments`
-    )
+    api
+      .fetchArticleComments(article_id)
       .then(response => {
         this.setState({
           comments: response.data.comments,
@@ -40,20 +38,21 @@ class ArticleCommentsPage extends Component {
   getArticleTitle = () => {
     const { article_id } = this.props;
 
-    Axios.get(
-      `https://steph-nc-news-app.herokuapp.com/api/articles/${article_id}`
-    ).then(response => {
-      this.setState({
-        articleTitle: response.data.article.title
+    api
+      .fetchArticleTitle(article_id)
+      .then(response => {
+        this.setState({
+          articleTitle: response.data.article.title
+        });
+      })
+      .catch(err => {
+        this.setState({
+          err: {
+            msg: err.response.data.msg,
+            status: err.response.status
+          }
+        });
       });
-    }).catch(err => {
-      this.setState({
-        err: {
-          msg: err.response.data.msg,
-          status: err.response.status
-        }
-      });
-    });;
   };
 
   componentDidMount() {
@@ -67,28 +66,25 @@ class ArticleCommentsPage extends Component {
     });
   };
 
-  deleteComment = comment_id => {
-    return Axios.delete(
-      `https://steph-nc-news-app.herokuapp.com/api/comments/${comment_id}`
-    ).catch(err => {
-      this.setState({
-        err: {
-          msg: err.response.data.msg,
-          status: err.response.status
-        }
-      });
-    });;
-  };
-
   removeCommentFromState = comment_id => {
     this.setState({ isLoading: true });
     const { comments } = this.state;
-    this.deleteComment(comment_id).then(() => {
-      const filteredComments = comments.filter(comment => {
-        return comment.comment_id !== comment_id;
+    return api
+      .removeComment(comment_id)
+      .then(() => {
+        const filteredComments = comments.filter(comment => {
+          return comment.comment_id !== comment_id;
+        });
+        this.setState({ comments: filteredComments, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({
+          err: {
+            msg: err.response.data.msg,
+            status: err.response.status
+          }
+        });
       });
-      this.setState({ comments: filteredComments, isLoading: false });
-    });
   };
 
   render() {
